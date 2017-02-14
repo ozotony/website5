@@ -1,0 +1,265 @@
+﻿<style>
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-success:hover {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+        text-shadow: none !important;
+    }
+</style>
+
+
+<div class="container-fluid" ng-show="agentRole.Agent" style="overflow:auto">
+
+    <br />
+    <br />
+
+
+
+    <script type="text/ng-template" id="myModalContent2.html" >
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title"><span style="font-weight:bold ;font-size:10px ;"> Terms And Agreement </span></h3>
+        </div>
+        
+        <div class="modal-body">
+            <p>
+                <table  align="center" class="table">
+                    <tr>
+                        <td colspan="2">
+                            <table class="center-align table" >
+
+
+                                <tr>
+                                    <td class="center-align"
+                                        style="background-color:#1C5E55; color:#ffffff; font-size:16px;">
+                                        WEB PAYMENT GUIDE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left-align">
+                                        <span class="notice_header"> Step One:</span><br />
+                                        <span class="notice_text">You should have either an Interswitch powered Debit card or Verve card</span><br />
+                                        <br />
+                                        <span class="notice_header">Step Two:</span><br />
+                                        <span class="notice_text">Please ensure that the card provided is still valid (Check the expiry date!)</span><br />
+                                        <br />
+                                        <span class="notice_header">Step Three:</span><br />
+                                        <span class="notice_text">
+                                            Please ensure that you have the required amount (As shown on the details page!)
+                                            on the selected card type to pay for the required items
+                                        </span><br />
+                                        <br />
+                                        <span class="notice_header">Step Four:</span><br />
+                                        <span class="notice_text">
+                                            On the payment gateway, select the card type and provide the card details,PIN
+                                            and any other required information
+                                        </span><br />
+                                        <br />
+                                        <span class="notice_header">Step Five:</span><br />
+                                        <span class="notice_text">Always cross-check the details before you proceed to the payment gateway</span><br />
+                                        <br />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center-align">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center-align"
+                                        style="background-color:#1C5E55; color:#ffffff;font-size:16px;">
+                                        BANK DEPOSIT PAYMENT GUIDE
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center-align">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                           
+
+                                <tr>
+                                    <td class="left-align">
+                                        <span class="notice_header">Step One:</span><br />
+                                        <span class="notice_text">
+                                            Make sure you have either recieved an alert (SMS/E-mail) or have printed a copy
+                                            of your invoice
+                                        </span><br />
+                                        <br />
+                                        <span class="notice_header">Step Two:</span><br />
+                                        <span class="notice_text">Kindly go to any of the designated banks for the service to make payment</span><br />
+                                        <br />
+                                        <span class="notice_header">Step Three:</span><br />
+                                        <span class="notice_text">
+                                            Always cross-check the details before you proceed to generate the payment
+                                            invoice
+                                        </span><br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="notice_footer">
+                                        Thank you for adhering to the above instructions!!
+                                    </td>
+                                </tr>
+                              
+
+                               
+
+
+
+
+
+
+
+
+
+
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+        
+       
+        <div class="modal-footer">
+            
+
+            <button ng-click="ok()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon glyphicon-remove"></i> &nbsp Close  </button>
+          
+        </div>
+     
+
+    </script>
+
+    <div class="row ">
+
+        <div class="col-md-8 col-md-offset-2">
+            <img src="images/ApplicationStatus3.png" class="img-responsive" />
+
+
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-2 ">
+
+            <div class="dds"> Confirm Selected Item</div>
+
+
+
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+
+       
+
+        <table class="col-md-12   table table-bordered">
+            <thead class="cf">
+                <tr>
+                    <th>SN</th>
+                    <th>CODE</th>
+                    <th>ITEM DESCRIPTION</th>
+
+                    <th>QTY</th>
+                    <th>TOTAL (NGN)</th>
+
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <tr ng-repeat="row in displayedCollection2">
+
+                    <td data-title="CODE">{{$index + 1}}</td>
+                    <td data-title="CODE">{{row.item_code}}</td>
+
+                    <td data-title="DESCRIPTION">{{row.item_desc}}</td>
+
+                    <td data-title="QUANTITY">{{row.qty}}</td>
+
+                    <td data-title="AMOUNT">{{row.amt|currency:""}}</td>
+                </tr>
+                <tr>
+                    <td data-title="CODE2"></td>
+                    <td data-title="CODE"></td>
+
+                    <td data-title="DESCRIPTION"></td>
+
+                    <td data-title="QUANTITY"></td>
+                    <td data-title="TOTAL AMOUNT ">NGN&nbsp;<strong>{{vTotal|currency:""}}</strong></td>
+
+
+
+                </tr>
+
+            </tbody>
+
+
+
+
+        </table>
+
+
+        </div>
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-5">
+
+            <button ng-click="submitForm2()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon  glyphicon-arrow-left"></i> &nbsp Back   </button>
+            <!--<span style="margin-left:8px;">or</span>-->
+            <button ng-click="submitForm('aa')" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit">  CheckOut &nbsp <i class="glyphicon  glyphicon-arrow-right"></i> </button>
+        </div>
+
+
+
+
+    </div>
+
+    <br/>
+    <br />
+    <div class="col-md-7 col-md-offset-5">
+        &nbsp;&nbsp; &nbsp;   <input type="checkbox" class="col-md-1" ng-model="value2" ng-change="getCheckedTrue()" 
+                                     ng-true-value="'YES'" ng-false-value="'NO'"> &nbsp;&nbsp; &nbsp; <span ng-click="$event.stopPropagation()" class="col-md-7">  <span ng-click="$event.stopPropagation()">By checking and Clicking "Checkout" You Agree To Our </span> <br/>  <span ng-click="$event.stopPropagation()" style="font-weight:bold">    Terms,Conditions,Requirements </span> </span>
+
+    </div>
+
+    </div>
+
+
+
+

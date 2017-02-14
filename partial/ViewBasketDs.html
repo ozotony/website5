@@ -1,0 +1,92 @@
+﻿<style>
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-success:hover {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+        text-shadow: none !important;
+    }
+
+     .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    
+    color: black;
+    cursor: default;
+    background-color: #06FBB5;
+    border-color: #06FBB5;
+}
+</style>
+<div class="container-fluid" ng-show="agentRole.Agent">
+    <br />
+    <div align="center" style="font-size:20px;"> Design  Unused Item </div>
+    <br />
+    <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th class="tbbg2" style="font-weight:bold"><b> S/N </b></th>
+                <th st-sort="oai_no" class="tbbg2" style="font-weight:bold"><b>CODE</b></th>
+                <th st-sort="reg_dt" class="tbbg2" style="font-weight:bold"><b>APLICANT</b></th>
+                <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold"><b>TRANSACTION ID</b></th>
+                <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold"><b>PRODUCT TITLE</b></th>
+                <th st-sort="product_title" class="tbbg2" style="font-weight:bold"><b>AMT</b></th>
+                <th st-sort="product_title" class="tbbg2"></th>
+
+
+
+            </tr>
+            <tr>
+                <th colspan="7"><input id="aa" st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayedCollection" ng-class="{'pending-delete': add2(row)}">
+
+                <td align="center">{{row.sn}}</td>
+                <td align="center">{{row.item_code}}</td>
+                <td align="center">{{row.xname}}</td>
+                <td align="center">{{row.new_transID}}</td>
+                <td align="center"><input type="text" class="form-control input-sm" placeholder="Prod Title" ng-model="row.product_title"></td>
+                <td align="center">{{row.init_amt|currency:""}}</td>
+                <td align="center"><button ng-click="EditRow(row)" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit">  Proceed &nbsp <i class="glyphicon  glyphicon-arrow-right"></i> </button></td>
+
+
+
+
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+

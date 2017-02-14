@@ -1,0 +1,498 @@
+﻿
+<script type="text/ng-template" id="myTooltipTemplate.html">
+    <span>Special Tooltip with Special Tooltip with <strong>markup</strong> <br /> and testing </span>
+</script>
+
+<style>
+    /* Specify styling for tooltip contents */
+    .tooltip-inner {
+        background-color: #00acd6;
+        color: #fff;
+    }
+
+    .tooltip-inner {
+        max-width: 350px;
+        /* If max-width does not work, try using width instead */
+        width: 350px;
+    }
+     button .glyphicon {color:black !important;}
+     #btn-signup2 .glyphicon {color:white !important;}
+      .glyphicon2 {color:white !important;}
+    .news {
+        background-image: url("images/LatestNews1.png");
+        height: 100px;
+        background-repeat: no-repeat;
+    }
+
+    hr {
+        border-top: 7px solid #05BC88;
+        margin-bottom: 0px;
+    }
+
+    .hr2 {
+        border-top: 7px solid #3D3D3D;
+        margin-top: 1px;
+    }
+
+        .btn-success {
+    color: black;
+    background-color: #06FBB5;
+    border-color: #06FBB5;
+     border:none !important;
+
+        box-shadow:none !important;
+}
+     .btn-success:active {
+    color: black;
+    background-color: #06FBB5;
+    border-color: #06FBB5;
+     border:none !important;
+
+        box-shadow:none !important;
+}
+
+         .btn-success:hover {
+
+        background-color:#7F7F7F;
+        border-color:#7F7F7F;
+        text-shadow:none !important;
+
+       
+    }
+
+      .btn-success2 {
+    color: black;
+    background-color: red;
+    border-color: #06FBB5;
+     border:none !important;
+
+        box-shadow:none !important;
+}
+     .btn-success2:active {
+    color: black;
+    background-color: red;
+    border-color: #06FBB5;
+     border:none !important;
+
+        box-shadow:none !important;
+}
+
+     .btn-space {
+    margin-right: 5px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+   color:black;
+}
+
+
+
+</style>
+
+<style>
+    .form-control {
+        background-color: #939393;
+        color: white;
+    }
+
+
+
+    .panel-info > .panel-heading {
+        background-color: white;
+    }
+
+    .panel-title {
+        color: #3D3D3D;
+        font-weight: bold;
+        padding-left: 70px;
+    }
+
+    #btn-signup {
+        background-color: #06FBB5;
+        cursor: pointer;
+    }
+
+    #fgpassword {
+        color: #CCCCCC;
+        font-weight: bold;
+    }
+
+    #loginbox2 {
+        background-image: url('images/bbimage.png');
+        background-repeat: repeat-x;
+    }
+
+
+    .input-group-addon {
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        color: white;
+        text-align: center;
+        background-color: #939393;
+    }
+
+    .side-menu .navbar-nav li {
+        border-bottom: 0px solid #939393;
+        padding-left: 10px;
+        overflow: visible;
+    }
+
+    .side-menu #dropdown > a {
+        border-bottom: 0px solid #939393;
+        overflow: visible;
+    }
+
+
+    .side-menu #dropdown .panel-body .navbar-nav li {
+        border-bottom: 0px solid #939393;
+        overflow: visible;
+    }
+
+    .side-menu .navbar-nav {
+        font-family: Helvetica;
+        font-size: 10px;
+    }
+
+
+    
+
+
+    .dd8 {
+        color: white;
+        background-color: #3D3D3D;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    .vAccordion--default2 v-pane.is-expanded > v-pane-header {
+        background-color: #616161;
+        border-bottom-color: #2196F3;
+        color: white;
+        height: 40px;
+    }
+
+    .vAccordion--default3 v-pane.is-expanded > v-pane-header {
+        padding-top: 20px;
+        background-color: #616161;
+    }
+</style>
+
+<style type="text/css">
+    .pending-delete {
+        /*color:red;
+    background-color: lightgreen;*/
+        /*text-decoration: line-through;*/
+        font-weight: bolder;
+        font-size: 14px;
+    }
+
+    .vAccordion--default2 v-pane-header {
+        border-bottom: 1px solid white;
+        height: 30px;
+    }
+
+
+        .vAccordion--default2 v-pane-header:hover {
+            background-color: #06FBB5;
+            color: #3D3D3D;
+        }
+
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    
+    color: black;
+   
+    background-color: #06FBB5 !important;
+    border-color:none;
+}
+
+
+      
+</style>
+<div class="container-fluid" ng-show="agentRole.Agent">
+
+    <br />
+    <br />
+    <div class="row ">
+        <div class="col-md-8 col-md-offset-2">
+          
+                <img src="images/ApplicationStatus2.png" class="img-responsive" />
+
+
+            </div>
+        </div>
+
+    <br />
+
+
+    <v-accordion class="vAccordion--default2"  >
+
+        <!-- add expanded attribute to open the section -->
+        <v-pane expanded>
+            <v-pane-header  class="dd8">
+
+                <span style="margin-top:10px" change-background3> Trademark </span>     <span ng-click="$row.toggle()" class="glyphicon glyphicon-chevron-down pull-right"></span>    
+               
+            </v-pane-header>
+
+            <v-pane-content>
+                <table st-table="displayedCollection" st-safe-src="ListAgent" class="col-md-12  table table-bordered">
+                    <thead class="cf">
+                        <tr >
+
+                            <th>CODE</th>
+                            <th>DESCRIPTION</th>
+                            <th>APPLICATION FEE(NGN)</th>
+                            <th>TECH FEE(NGN)</th>
+                            <th>AMOUNT(NGN)</th>
+                          
+                           
+
+
+                            <th></th>
+
+
+
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection">
+                            <td data-title="CODE">{{row.item_code}}</td>
+                            <td data-title="DESCRIPTION">{{row.xdesc}}</td>
+                            <td data-title="APPFEE">{{row.init_amt|currency:""}}</td>
+                            <td data-title="APPTECH">{{row.tech_amt|currency:""}}</td>
+
+
+
+
+                            <td data-title="AMOUNT(NGN)">{{row.amt|currency:""}} </td>
+                            <td data-title="QUANTITY"><form id="signupform"><input type="text" class="form-control form-control2" placeholder="Qty" ng-disabled="row.showbtn2" ng-model="row.qt_code"> </form></td>
+
+
+
+
+                            <td>
+                                <table >
+                                    <tr ng-show="showbtn2(row)">
+                                        <td>
+                                            
+                                            <button id="btn-signup"  ng-show="showbtn2(row)" ng-click="EditRow(row)" class="btn-success btn-lg center-block" style="font-weight:bold ;font-size:10px ;" type="submit"> Add </button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="showbtn3(row)">
+                                        <td>
+                                            <button id="btn-signup2" ng-show="showbtn3(row)" ng-click="EditRow2(row)" class="btn-success2 btn-lg center-block" style="font-weight:bold ;font-size:10px ;background-color:#BE1E2D" type="submit"> <i class="glyphicon  glyphicon-trash"></i> </button>
+                                           
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </td>
+
+
+
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" class="text-center col">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+
+
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </v-pane-content>
+        </v-pane>
+
+        <v-pane >
+            <v-pane-header  class="dd8">
+                <span style="margin-top:10px" change-background3> Patent </span>     <span ng-click="$row.toggle()" class="glyphicon glyphicon-chevron-down pull-right"></span>    
+            </v-pane-header>
+
+            <v-pane-content>
+                <table st-table="displayedCollection2" st-safe-src="ListAgent2" class="col-md-12  table table-bordered">
+                    <thead class="cf">
+                        <tr >
+
+                            <th>CODE</th>
+                            <th>DESCRIPTION</th>
+                            <th>APPLICATION FEE(NGN)</th>
+                            <th>TECH FEE(NGN)</th>
+                            <th>AMOUNT(NGN)</th>
+
+
+
+
+                            <th></th>
+
+
+
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection2">
+                            <td data-title="CODE">{{row.item_code}}</td>
+                            <td data-title="DESCRIPTION">{{row.xdesc}}</td>
+                            <td data-title="APPFEE">{{row.init_amt|currency:""}}</td>
+                            <td data-title="APPTECH">{{row.tech_amt|currency:""}}</td>
+
+
+
+
+                            <td data-title="AMOUNT(NGN)">{{row.amt|currency:""}} </td>
+                            <td data-title="QUANTITY"><input type="text" class="form-control input-sm form-control2" placeholder="Qty" ng-disabled="row.showbtn2" ng-model="row.qt_code"></td>
+
+
+
+
+                            <td>
+                                <table >
+                                    <tr ng-show="showbtn2(row)">
+                                        <td>
+
+                                            <button id="btn-signup" ng-show="showbtn2(row)" ng-click="EditRow3(row)" class="btn-success btn-lg center-block" style="font-weight:bold ;font-size:10px ;" type="submit"> Add </button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="showbtn3(row)">
+                                        <td>
+                                            <button id="btn-signup2" ng-show="showbtn3(row)" ng-click="EditRow4(row)" class="btn-success2 btn-lg center-block" style="font-weight:bold ;font-size:10px ;background-color:#BE1E2D" type="submit"> <i class="glyphicon glyphicon-trash"></i> </button>
+
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </td>
+
+
+
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" class="text-center col">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+
+
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </v-pane-content>
+        </v-pane>
+
+        <v-pane>
+            <v-pane-header class="dd8">
+                <span style="margin-top:10px" change-background3> Design </span>     <span ng-click="$row.toggle()" class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </v-pane-header>
+
+            <v-pane-content>
+                <table st-table="displayedCollection3" st-safe-src="ListAgent3" class="col-md-12  table table-bordered">
+                    <thead class="cf">
+                        <tr >
+
+                            <th>CODE</th>
+                            <th>DESCRIPTION</th>
+                            <th>APPLICATION FEE(NGN)</th>
+                            <th>TECH FEE(NGN)</th>
+                            <th>AMOUNT(NGN)</th>
+
+
+
+
+                            <th></th>
+
+
+
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection3">
+                            <td data-title="CODE">{{row.item_code}}</td>
+                            <td data-title="DESCRIPTION">{{row.xdesc}}</td>
+                            <td data-title="APPFEE">{{row.init_amt|currency:""}}</td>
+                            <td data-title="APPTECH">{{row.tech_amt|currency:""}}</td>
+
+
+
+
+                            <td data-title="AMOUNT(NGN)">{{row.amt|currency:""}} </td>
+                            <td data-title="QUANTITY"><input type="text" class="form-control input-sm form-control2" placeholder="Qty" ng-disabled="row.showbtn2" ng-model="row.qt_code"></td>
+
+
+
+
+                            <td>
+                                <table >
+                                    <tr ng-show="showbtn2(row)">
+                                        <td>
+
+                                            <button id="btn-signup" ng-show="showbtn2(row)" ng-click="EditRow5(row)" class="btn-success btn-lg center-block" style="font-weight:bold ;font-size:10px ;" type="submit"> Add </button>
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="showbtn3(row)">
+                                        <td>
+                                            <button id="btn-signup2" ng-show="showbtn3(row)" ng-click="EditRow6(row)" class="btn-success2 btn-lg center-block" style="font-weight:bold ;font-size:10px ;background-color:#BE1E2D" type="submit"> <i class="glyphicon glyphicon-trash"></i> </button>
+
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </td>
+
+
+
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" class="text-center col">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+
+
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </v-pane-content>
+        </v-pane>
+
+    </v-accordion>
+
+    <br />
+    <div class="row">
+        <div class="col-md-7 col-md-offset-5">
+           
+            <button  ng-click="submitForm2()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon  glyphicon-arrow-left"></i> &nbsp Back   </button>
+            <!--<span style="margin-left:8px;">or</span>-->
+            <button ng-click="submitForm('aa')" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit">  Proceed &nbsp <i class="glyphicon  glyphicon-arrow-right"></i> </button>
+        </div>
+
+       
+      
+
+    </div>
+
+</div>
+
+

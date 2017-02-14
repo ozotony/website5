@@ -1,0 +1,136 @@
+﻿<style>
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-success:hover {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+        text-shadow: none !important;
+    }
+
+    .divLast {
+        border-width: 2px;
+        border-bottom-width: 2px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+    }
+
+    .divLast2 {
+        padding-top: 80px;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        /*padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;*/
+        border-top: 0px solid white;
+    }
+</style>
+
+
+
+
+<style type="text/css">
+    .modal-dialog {
+        margin-top: 170px;
+    }
+
+    .modal-content {
+        background-color: #06FBB5;
+        color: black;
+        font-size: 10px;
+        font-weight: bold";
+    }
+
+    .single4 {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 6px solid #EEEEEE;
+        border-top-color: #BFBFBF;
+        border-bottom-color: #BFBFBF;
+        -webkit-animation: single4 2.5s infinite ease-in-out;
+        animation: single4 2.5s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes single4 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+        }
+    }
+
+    @keyframes single4 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+        }
+    }
+</style>
+
+
+<form id="form2" action="https://sandbox.interswitchng.com/webpay/pay" method="post" >
+    <input name="product_id" type="hidden" value="{{ vdata.product_id}}" />
+    <input name="pay_item_id" type="hidden" value="{{ vdata.pay_item_id}}" />
+    <input name="amount" type="hidden" value="{{InterSwitchPostFields.amount}}" />
+    <input name="currency" type="hidden" value="{{vdata.currency}}" />
+    <input name="site_redirect_url" type="hidden" value="{{vdata.site_redirect_url}}" />
+    <input name="txn_ref" type="hidden" value="{{twallet.transID}}" />
+    <input name="cust_name" type="hidden" value="{{applicant.applicantname}}" />
+    <input name="cust_name_desc" type="hidden" value="{{applicant.applicantname}}" />
+    <input name="cust_id" type="hidden" value="{{applicant.applicantname}}" />
+    <input name="cust_id_desc" type="hidden" value="{{applicant.applicantname}}" />
+    <input name="pay_item_name" type="hidden" value="{{applicant.applicantname}}" />
+    <input name="hash" type="hidden" value="{{InterSwitchPostFields.hash}}" />
+    <input name="payment_params" type="hidden" value="payment_split" />
+    <input name="xml_data" type="hidden" value='<payment_item_detail>
+        <item_details detail_ref="{{twallet.transID}}" institution="Einao Solutions" sub_location="Abuja" location="Lagos">
+            <item_detail item_id="1" item_name="Einao Solutions" item_amt="{{tech_amt}}" bank_id="120" acct_num="1771364037" />
+            <item_detail item_id="2" item_name="Federal Ministry Of Commerce" item_amt="{{init_amt}}" bank_id="120" acct_num="1770393883" />
+        </item_details>
+    </payment_item_detail>'/>
+    <br />
+   
+    <input id="btnPayment" type="submit" value="Make Payment"  class="btn btn-info" />
+
+</form>
+
+<script type="text/javascript">
+
+   
+
+
+</script>

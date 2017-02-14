@@ -1,0 +1,7 @@
+﻿------ Build started: Project: WebSite5, Configuration: Debug Any CPU ------
+Validating Web Site
+Building directory '/js/'.
+Building directory '/script/'.
+
+Validation Complete
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========

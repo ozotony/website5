@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>IpPro </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootsnipp.min.css" rel="stylesheet" />
+    <link href="css/Style3.css" rel="stylesheet" />
+    <link href="css/loading-bar.css" rel="stylesheet" />
+
+    <link href="css/Transition.css" rel="stylesheet" />
+
+    <link href="css/sweet-alert.css" rel="stylesheet" />
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-local-storage.js"></script>
+    <script src="js/loading-bar.js"></script>
+
+
+    <script src="js/sweet-alert.min.js"></script>
+
+    <script src="js/angular-messages.min.js"></script>
+
+    <script src="js/smart-table.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="script/app.js"></script>
+    <script src="script/App7.js"></script>
+    <script src="script/GetData.js"></script>
+    <script src="js/ng-modal.min.js"></script>
+    <link href="css/ng-modal.css" rel="stylesheet" />
+
+  
+    <script src="js/CustomDirectives.js"></script>
+
+    <script src="script/LoginInterceptor.js"></script>
+
+    <link href="css/v-accordion.min.css" rel="stylesheet" />
+
+    <script src="js/v-accordion.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <link href="css/ngDialog.min.css" rel="stylesheet" />
+    <script src="js/ngDialog.min.js"></script>
+
+   
+
+    <script>
+
+        $(function () {
+            $('.navbar-toggle-sidebar').click(function () {
+                $('.navbar-nav').toggleClass('slide-in');
+                $('.side-body').toggleClass('body-slide-in');
+                $('#search').removeClass('in').addClass('collapse').slideUp(200);
+            });
+
+            $('#search-trigger').click(function () {
+                $('.navbar-nav').removeClass('slide-in');
+                $('.side-body').removeClass('body-slide-in');
+                $('.search-input').focus();
+            });
+        });
+    </script>
+
+    
+
+
+        <style type="text/css" > 
+            html, body {
+            background-color: white;
+       
+        }
+
+             body {
+           font-family: "Quattrocento Sans", sans-serif; 
+        }
+
+            #agentbtn {
+            background-color :##06FBB5;
+               
+              
+    cursor:pointer;
+}
+
+            #agentlogin2 {
+                text-decoration:none;
+border:0;
+outline:none;
+            }
+
+
+            .form-control2 {
+         background-color : #939393 ;color :white  ;font-size:10px;
+    }
+
+            input::-webkit-input-placeholder {
+color: white !important;
+opacity:0.6 ;
+
+
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+opacity:0.6 ;
+
+
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+opacity:0.6 ;
+
+}
+ 
+input:-ms-input-placeholder {  
+color: white !important; 
+opacity:0.6  ;
+
+
+}
+
+
+        li > a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+            background-color: red;
+            color: white;
+        }
+
+
+
+
+ li > a:hover {
+    color: cyan;
+}  
+      
+ .navbar-default .navbar-nav>li>a {
+    color: white;
+}  
+
+ .glyphicon {color:#06FBB5 !important;}
+
+ .glyphicon4 {color:white !important;}
+
+ .button2 {
+    margin-top: 0px;
+
+     padding-top :0px;
+               margin-bottom :30px;
+               margin-left :20px;
+    
+  
+}
+
+
+ .ff {
+	font-family: "Open Sans";
+	font-size: 10px;
+	font-style: normal;
+	font-variant: normal;
+
+   
+	font-weight: 500;
+
+   
+	
+	
+}
+    #fullcol {
+
+        margin-bottom :-9999px;
+        padding-bottom :9999px;
+    }
+   #cpp {
+      
+      
+      
+   }
+
+   .nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+   .navbar {
+   
+    margin-bottom: 1px;
+  
+}
+
+            .ico:after {
+                content: '';
+                background-image: url('images/icons-02.png');
+                display: block;
+                height: 40px; /*height of icon */
+                width: 40px; /*width of icon */
+                position: absolute;
+                /*where to replace the icon */
+                top: 0px;
+                left: -40px;
+                /*background */
+               
+            }
+
+          footer {
+    overflow:hidden
+}
+
+         
+
+
+           .side-menu .navbar-nav li {
+   
+    border-bottom: 0px solid #939393;
+    padding-left :10px;
+}
+
+    .side-menu #dropdown > a {
+    border-bottom: 0px solid #939393;
+}
+
+  
+    .side-menu #dropdown .panel-body .navbar-nav li {
+  
+    border-bottom: 0px solid #939393;
+}
+
+    .side-menu .navbar-nav  {
+        font-family: Helvetica ;
+        font-size :10px;
+
+    }
+
+    .glyphicon3 {color:black !important;}
+.popover {
+    max-width: 1000px; /* optional max width */
+    width: intrinsic; /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content; /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+
+    background-color:#3D3D3D
+}
+
+ .hr3{
+	border-top: 4px solid #FFFFFF;
+    margin-top :1px;
+}
+
+           .sweet-alert button {
+    background-color: #06FBB5 !important;
+      color: black;
+  
+   
+   
+}
+
+ 
+    </style>
+
+
+    <style type="text/css">
+        @media print {
+
+            .no-print, .no-print * {
+                display: none !important;
+            }
+        }
+ .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+   
+}
+
+ .side-menu .navbar-nav li a .glyphicon4 {
+    padding-right: 1px;
+}
+    </style>
+    
+  
+
+</head>
+<body class="ff" style="overflow: auto">
+    
+        <div class="header no-print">
+            <nav class="navbar navbar-default navbar-static-top header">
+                <div class="container-fluid" style="background-color:#3D3D3D;color:#0FDBA1">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="row ">
+                        <br />
+
+                    </div>
+                    <div class="row">
+                        <div class="navbar-header">
+
+                            <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed col-md-2" style="color:#0FDBA1">
+                                MENU
+                            </button>
+
+                            <img src="images/IPProLogo.png" height="50px" style="margin-left:14px" />
+
+
+
+                            <a id="agentlogin2" href="#" ng-show=islogout><button type="button" id="agentbtn" style="background-color :#06FBB5 ;color :black ; margin-top:0px;font-size:10px ;font-weight:bold" class="btn  btn-lg button2 ff">Agent Sign Up</button></a>
+
+
+                            <a id="agentlogin3" href="#" ng-show=islogin class="text-center" style="margin-left:550px;">
+
+                                <button type="button" id="agentbtn" style="background-color :#3D3D3D ;color :#06FBB5 ; margin-top:0px;font-size:11px ;font-weight:bold ;font-family:Helvetica ;" class="btn  btn-lg button2 ff">{{HeaderMessage}}</button>
+                            </a>
+
+                            <button type="button" class="navbar-toggle collapsed col-md-3" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1, #agentlogin3">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+
+
+
+
+
+
+                            <!--    <a class="navbar-brand" href="/#" style="color:white">
+                                Administrator
+                            </a>  -->
+
+                        </div>
+
+
+
+
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+                            <ul class="nav navbar-nav navbar-right ff" style="margin-right:6px;">
+
+                                <li ng-show=islogout>
+                                    <a class="dropdown-menu2 ff" style="font-size:10px;" change-background2 count2="0" ng-style="count == 0 ? {color: '#06FBB5' } : { color: '#0FDBA1' } " href="#">Home</a>
+                                </li>
+
+                                <li ng-show=islogout>
+                                    <a class="dropdown-menu2 ff" style="color:#316758;font-size:10px" change-background2 count2="21" ng-style="count == 21 ? {color: '#06FBB5' } : { color: '#0FDBA1' } " href="#">About Us</a>
+                                </li>
+
+
+
+                                <li ng-show=islogout style="color:#316758;">
+                                    <a class="dropdown-menu2 ff" style="color:#316758;font-size:10px" change-background2 count2="23" ng-style="count == 24 ? {color: '#06FBB5' } : { color: '#0FDBA1' } " href="#">Online Services</a>
+                                </li>
+
+
+                                <li ng-show=islogout style="color:#316758;">
+                                    <a class="dropdown-menu2 ff" style="color:#316758;font-size:10px" change-background2 count2="25" ng-style="count == 25 ? {color: '#06FBB5' } : { color: '#0FDBA1' } " href="#">Contact Us</a>
+                                </li>
+
+                                <li ng-show="isFee && islogin">
+                                    <button id="btn-signup3" go-click="/SelectedItem" class="btn btn-lg" popover-placement="bottom" uib-popover-html="htmlPopover" popover-trigger="mouseenter" style="color:black;font-size:10px; background-color :#06FBB5 ;margin-top:18px ;border-color: #06FBB5;border:none;border-radius: 6px;width:60px" href="#/Fee"><i class="glyphicon glyphicon3 glyphicon-shopping-cart"></i> &nbsp;({{vcount}}) </button>
+
+                                </li>
+
+                                <li style="color:#316758;" ng-show=islogin>
+
+                                    <a class="dropdown-menu2 ff" style="color:#316758;font-size:10px;" change-background2 count2="22" ng-style="count == 22 ? {color: '#06FBB5' } : { color: '#0FDBA1' } " href="#/logout"><i class="glyphicon glyphicon-log-out"></i>&nbsp;LogOut</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div>
+            <div ng-show=islogin >
+
+                <div class="col-md-2 sidebar no-print " ng-show=islogin>
+
+                    <div class="row">
+                        <!-- uncomment code for absolute positioning tweek see top comment in css -->
+                        <div class="absolute-wrapper"> </div>
+                        <!-- Menu -->
+                        <div class="side-menu" id="fullcol" style="background-color:#616161">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <!-- Main Menu -->
+                                <div class="side-menu-container">
+                                    <ul class="nav navbar-nav" style="background-color:#616161;color:white">
+                                        <li ng-show="agentRole.Agent"><a ui-sref="home" change-background2 count2="3" ng-style="count == 3 ? {'background-color': '#3D3D3D'  } : { 'background-color': '#616161'}"><img src="images/icons-02.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Mail</span></a></li>
+                                        <li ng-show="agentRole.Agent"><a ui-sref="Applicant" change-background2 count2="32" ng-style="count == 32 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161'}"><img src="images/icons-03.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Make Payment</span></a></li>
+                                        <li ng-show="agentRole.Agent" class="panel panel-default" id="dropdown" change-background2 count2="0" ng-style="count == 0 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
+                                            <a data-toggle="collapse" href="#dropdown-lvl1" style="text-decoration:none"  change-background2 count2="0" ng-style="count == 0 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
+                                                <img src="images/icons-09.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Purchases</span>  <span class="caret"></span>
+                                            </a>
+
+                                            <!-- Dropdown level 1 -->
+                                            <div id="dropdown-lvl1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul class="nav navbar-nav" style="background-color:#616161;color:white">
+                                                        <li change-background3 count2="21" ng-style="count22 == 21 ? {'color': 'white' } : { 'color': 'white' }" ><a ui-sref="ViewBasketTm"  style="text-decoration:underline" ><i ng-show="count22 == '21'" class="glyphicon glyphicon-chevron-right glyphicon4"></i> <span style="vertical-align:bottom;font-size:10px"> Trademark</span></a></li>
+                                                        <li change-background3 count2="22" ng-style="count22 == 22 ? {'color': 'white' } : { 'color': 'white' }"><a ui-sref="ViewBasketPt" style="text-decoration:underline"><i ng-show="count22 == '22'" class="glyphicon glyphicon-chevron-right glyphicon4"></i> <span style="vertical-align:bottom;font-size:10px"> Patent</span></a></li>
+
+                                                        <li change-background3 count2="23" ng-style="count22 == 23 ? {'color': 'white' } : { 'color': 'white' }"><a ui-sref="ViewBasketDs" style="text-decoration:underline"><i ng-show="count22 == '23'" class="glyphicon glyphicon-chevron-right glyphicon4"></i> <span style="vertical-align:bottom;font-size:10px"> Design</span></a></li>
+
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+
+                                        <li ng-show="agentRole.Agent"><a href="#" change-background2 count2="10" ng-style="count == 10 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-05.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Status</span></a></li>
+                                        <li ng-show="agentRole.Agent"><a href="#" change-background2 count2="22" ng-style="count == 22 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-06.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Reports</span></a></li>
+                                        <li ><a href="#" change-background2 count2="23" ng-style="count == 23 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-07.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Contact Us</span></a></li>
+
+                                        <!-- Dropdown-->
+                                        <li class="panel panel-default" id="dropdown" change-background2 count2="7" ng-style="count == 7 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }" ng-show="agentRole.SuperAdmin">
+                                            <a data-toggle="collapse" href="#dropdown-lvl2">
+                                                <img src="images/icons-09.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Account Settings</span>  <span class="caret"></span>
+                                            </a>
+
+                                            <!-- Dropdown level 1 -->
+                                            <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul class="nav navbar-nav" style="background-color:#616161;color:white">
+                                                        <li change-background3 count2="24" ng-style="count24 == 24 ? {'color': 'white' } : { 'color': 'white' }"><a ui-sref="AgentAccreditation" style="text-decoration:underline"><i ng-show="count22 == '24'" class="glyphicon glyphicon-chevron-right glyphicon4"></i> <span style="vertical-align:bottom;font-size:10px"> Accreditation Admin</span></a></li>
+                                                        
+                                                        <!-- Dropdown level 2 -->
+                                                    
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li><a href="#" change-background2 count2="24" ng-style="count == 24 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-08.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Documents</span></a></li>
+
+
+
+
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 content nopadding " >
+
+                    <div id="form-views" ui-view>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-show=islogout>
+
+                <div class="col-md-12 content  ">
+
+                    <div id="form-views" ui-view>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row container-fluid" style="overflow:hidden">
+
+
+
+            <footer class="pull-left  navbar-fixed-bottom" style="background-color:#3D3D3D;color:#0FDBA1 ;min-height:40px ">
+
+
+                <p class="col-md-12">
+
+
+
+                    <div class="ff text-center " style="font-size:10px;font-family:Helvetica;">
+                        Einao |  Copyright &COPY; 2015
+
+                    </div>
+
+
+
+
+                    <div class="text-center ">
+
+                        <img src="images/footer2.png" />
+
+
+                    </div>
+
+                </p>
+            </footer>
+
+        </div>
+
+    
+       
+</body>
+</html>
+
+<script type="text/ng-template" id="popover.html">
+    <div>
+        Popover content
+    </div>
+</script>

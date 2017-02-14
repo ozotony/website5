@@ -1,0 +1,326 @@
+﻿<style>
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-success:hover {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+        text-shadow: none !important;
+    }
+
+    .divLast {
+        border-width: 2px;
+        border-bottom-width: 2px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+    }
+
+    .divLast2 {
+        padding-top: 80px;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        /*padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;*/
+        border-top: 0px solid white;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+</style>
+<div class="container-fluid" ng-show="agentRole.Agent">
+    <div id="searchform">
+
+        <div class="row">
+
+            <div style="margin-left:200px;">
+
+                <div align="center" style="font-size:20px;">  PAYMENT CONFIRMATION SECTION </div>
+
+                <div align="center" style="font-size:20px;" ng-show="vshow">
+                  
+                        <strong>PAYMENT COMPLETED SUCCESSFULLY</strong><br />
+                        <div class="payment_success">
+                            <div class="x_succ_img">
+                                An e-mail has been sent to: {{agent.Email}}<br />
+                                Please check your "Payment Status" or "History Log" to view more details!!
+                            </div>
+                        </div>
+                  
+                </div>
+
+                <div align="center" style="font-size:20px;" ng-show="vshow2">
+
+                    <strong>PAYMENT NOT COMPLETED SUCCESSFULLY</strong><br />
+                    <div class="payment_success">
+                        <div class="x_succ_img">
+                            An e-mail has been sent to: {{agent.Email}}<br />
+                            Please check your "Payment Status" or "History Log" to view more details!!
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-12" style="background-color:#3D3D3D ;color:white ;height: 40px;">
+
+                <div style="margin-top:15px"> <span style="font-weight:bold; ;vertical-align:central"> Transaction References </span> </div>
+
+
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div> <span style="font-weight:bold"> Transaction Id :  </span>{{twallet.transID}} </div>
+
+                <div> <span style="font-weight:bold"> Transaction Date :  </span>{{twallet.xreg_date}} </div>
+                <div> <span style="font-weight:bold"> Payment Reference :  </span>{{Returnurl.PaymentReference}} </div>
+
+
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-12" style="background-color:#3D3D3D ;color:white;height: 40px;">
+
+                <div style="margin-top:15px"> <span style="font-weight:bold;padding-top:40px">Customer Details  </span> </div>
+
+
+
+            </div>
+        </div>
+
+        <br />
+
+        <table class="table">
+            <tr>
+                <td>
+                    <div class="row">
+                        <div>
+
+
+                            <div class="col-md-5" style="background-color:#3D3D3D ;color:white;height:40px">
+
+                                <div style="margin-top:15px"><span style="font-weight:bold;padding-top:40px"> Applicant  Details </span> </div>
+
+
+
+                            </div>
+
+
+                            <div class="col-md-5 col-md-offset-2" style="background-color:#3D3D3D ;color:white;height:40px">
+
+                                <div style="margin-top:15px"><span style="font-weight:bold;padding-top:40px"> Agent  Details </span> </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+
+                    <div class="row">
+
+
+                        <div class="col-md-5">
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px ;line-height:20px"> Full Name :  </span> <span style="line-height:20px"> {{applicant.applicantname}} </span>   </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Address :  </span> <span style="line-height:20px"> {{applicant.address}} </span> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Email Address :  </span> <span style="line-height:20px"> {{applicant.email}} </span> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Phone Number :  </span> <span style="line-height:20px"> {{applicant.mobile}} </span> </div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+                        <div class="col-md-5 col-md-offset-2">
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Full Name :  </span> <span style="line-height:20px"> {{agent.Surname}} </span> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Code :  </span> <span style="line-height:20px"> {{agent.Sys_ID}} </span> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Email Address :  </span> <span style="line-height:20px"> {{agent.Email}} </span> </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Phone Number :  </span> <span style="line-height:20px"> {{agent.PhoneNumber}} </span></div>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </td>
+
+            </tr>
+
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-12" style="background-color:#3D3D3D ;color:white ;height: 40px;">
+
+                <div style="margin-top:15px"> <span style="font-weight:bold;padding-top:40px">  Purchase Details </span> </div>
+
+
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <table class="col-md-12   table table-bordered">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>CODE</th>
+                        <th>ITEM DESCRIPTION</th>
+
+                        <th>QTY</th>
+                        <th>TOTAL (NGN)</th>
+
+
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+
+                        <td data-title="CODE">{{$index + 1}}</td>
+                        <td data-title="CODE">{{row.item_code}}</td>
+
+                        <td data-title="DESCRIPTION">{{row.item_desc}}</td>
+
+                        <td data-title="QUANTITY">{{row.qty}}</td>
+
+                        <td data-title="AMOUNT">{{row.amt|currency:""}}</td>
+                    </tr>
+                    <tr>
+                        <td data-title="CODE2"></td>
+                        <td data-title="CODE"></td>
+
+                        <td data-title="DESCRIPTION"></td>
+
+                        <td data-title="QUANTITY"></td>
+                        <td data-title="TOTAL AMOUNT ">NGN&nbsp;<strong>{{vTotal|currency:""}}</strong></td>
+
+
+
+                    </tr>
+
+                </tbody>
+
+
+
+
+            </table>
+
+
+        </div>
+
+
+        <br />
+
+    </div>
+
+    <div class="row no-print">
+        <div class="col-md-7 col-md-offset-5">
+
+         
+
+            <button ng-click="submitForm3()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon glyphicon-print"></i> &nbsp Print    </button>
+            <!--<span style="margin-left:8px;">or</span>-->
+           
+        </div>
+
+
+
+
+    </div>
+
+    </div>
