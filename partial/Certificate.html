@@ -1,0 +1,173 @@
+﻿<div class="container">
+    <modal-dialog show='dialogShown' dialog-title='SEARCH PAYMENT'>
+
+        <table class="table-bordered">
+
+            <tr>
+                <td align="left">
+                    <input id="emailaddress" size="100px" ng-model="VEmail" name="emailaddress" placeholder="Enter TRANSACTION ID" type="text" />
+                    <br />
+                    <label>Search From Branch Collect  <input type="checkbox" id="vchk" ng-model="BranchCollect"></label>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding-top:11px;">
+
+
+                    <input type="button" ng-click="add3(VEmail,BranchCollect)" class="submit" value="SEARCH" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="1" cellpadding="4" class="table" align="center">
+                        <thead>
+                            <tr>
+
+                                <th>Reference ID</th>
+
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>{{payment.TransId}}</td>
+                                <td>{{payment.Applicant_Name}}</td>
+                                <td>{{payment.Applicant_Email}}</td>
+
+
+                                <td>
+                                    <a href="#" ng-click="EditRow2(payment);$event.preventDefault(); $event.stopPropagation();">Confirm Update </a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+    </modal-dialog>
+    <div id="mystickytooltip" class="stickytooltip">
+        <div style="padding:5px">
+
+            <div id="sticky1" style="font:bold">
+                Enter a valid online application ID as displayed on your acknowledgement form.
+            </div>
+
+        </div>
+
+        <div class="stickystatus"></div>
+    </div>
+    <table class="table table-responsive table-bordered ">
+        <tr>
+            <td style="align-content:center"></td>
+
+            <td>
+                <input type="text" ng-model="OnlineNumber" data-tooltip="Enter a valid online application ID as displayed on your acknowledgement form." class="form-control" id="OnlineNumber" placeholder="Online Number">
+
+            </td>
+
+            <td>
+
+
+                <button type="button" class="btn-success btn-lg"  ng-click="add()" class="btn   btn-info "><i class="fa fa-search"></i>Search</button>
+
+            </td>
+
+        </tr>
+
+
+    </table>
+    <div class="row col-lg-11 col-md-11">
+        <table st-table="displayedCollection" st-safe-src="ListAgent" class="table form table-responsive  col-lg-3 col-md-3  table-striped">
+            <thead>
+                <tr>
+                  
+
+
+                    <th st-sort="oai_no" style="font:bold">OAI NUMBER</th>
+                    <th st-sort="reg_dt" style="font:bold">FILING DATE</th>
+                    <th st-sort="reg_no" style="font:bold"> FILE No</th>
+                    <th st-sort="applicant_name" class="tbbg2">APPLICANT NAME</th>
+                    <th st-sort="product_title" style="font:bold">PRODUCT TITLE</th>
+                    <th st-sort="product_title" style="font:bold">AGENT CODE</th>
+                    <th st-sort="product_title" style="font:bold">AGENT NAME</th>
+                    <th st-sort="product_title" style="font:bold">CLASS</th>
+                    <th st-sort="product_title" style="font:bold">STATUS</th>
+
+
+
+
+                    <th style="font:bold">PAY</th>
+
+
+                    <th style="font:bold">UPDATE T003</th>
+
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in displayedCollection">
+
+               
+
+
+                    <td>{{row.oai_no}}</td>
+                    <td>{{row.reg_dt}}</td>
+                    <td>{{row.reg_no}}</td>
+                    <td>{{row.applicant_name}}</td>
+                    <td>{{row.product_title}}</td>
+                    <td>{{row.Agent_Code}}</td>
+                    <td>{{row.Agent_Name}}</td>
+                    <td>{{row.xclass}}</td>
+                    <td>{{row.xstat}}</td>
+
+
+
+
+
+                    <td align="center">
+
+                        <a target="_blank" ng-click="add2(row); $event.preventDefault(); $event.stopPropagation();" class="icon-bar" href="#"> <i class="fa  fa-paypal "></i></a>
+
+
+                    </td>
+
+                    <td align="center">
+
+
+
+                        <input id="Button1" type="button" class="btn-success " ng-click="EditRow(row)" value="Update T003" />
+                    </td>
+
+
+
+
+
+
+
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="10" class="text-center">
+                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    
+</div>

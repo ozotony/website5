@@ -1,0 +1,127 @@
+﻿<style>
+    .form-control {
+        background-color: #939393;
+        color: white;
+    }
+
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    input:-moz-placeholder, textarea:-moz-placeholder {
+        color: white;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    select option:checked,
+    select option:hover {
+        box-shadow: 0 0 10px 100px #000 inset;
+    }
+
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+         .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+ 
+    border-top: 0px solid #ddd;
+}
+
+          .btn-group-lg>.btn, .btn-lg {
+   padding-top:5px;
+   padding-bottom:5px;
+   
+  
+}
+</style>
+
+<div class="container-fluid">
+
+
+
+
+    <br />
+
+    <div align="center" style="font-size:20px;">  Patent Status </div>
+
+    <br />
+    
+
+    <table class="table">
+
+
+
+        <tr>
+
+            <td>
+
+                <input type="text" id="SelectedValue" class="form-control " required name="txt_status" placeholder="Enter Transaction Id" ng-model="aa.SelectedValue">
+
+
+
+            </td>
+        </tr>
+      
+        <tr>
+            <td>
+                <br/>
+
+                <button id="Button3" type="submit" ng-click="Ddx3()" class="btn-success btn-lg">  Clear <i class="glyphicon glyphicon-remove"></i> </button>
+
+                <button id="Button3" type="submit" ng-click="Ddx(aa.SelectedValue)" class="btn-success btn-lg">  Search <i class="glyphicon glyphicon-search"></i> </button>
+               
+
+            </td>
+        </tr>
+
+    </table>
+
+    <table align="center" class="table" ng-show=vshow id="table1">
+       
+        <tr>
+            <td colspan="2" style="background-color:#3D3D3D; color:#ffffff; text-align:center; font-weight:bold;width:100%">
+                <strong>---STATUS INFORMATION---</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100%" align="justify" colspan="2">
+                Dear
+                {{user.Surname}},
+
+                <br /> We will like to inform you of the current position  of  your application ("/OAI/PT/{{ dd.lt_stage[0].validationID}}") below: <br /><br />
+                Current Office: <strong>   {{dd.ppx.status}}</strong><br />
+                Current Status: <strong> {{dd.ppx.data_status}}</strong><br />
+
+                Regards,
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color:#3D3D3D; color:#ffffff; text-align:center; font-weight:bold;width:100%" colspan="2"></td>
+        </tr>
+
+    
+    </table>
+
+</div>
+

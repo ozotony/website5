@@ -45,7 +45,7 @@
 
                     $rootScope.count = attributes.count2;
 
-                    localStorageService.set("count", $rootScope.count);
+                    localStorageService.set("count2", $rootScope.count);
                     element.css('color', 'white');
                    
 
@@ -120,7 +120,23 @@
     }]);
 
 
+    app3.directive('fileUpload', function () {
+        return {
+            scope: true,        //create a new scope
+            link: function (scope, el, attrs) {
+                el.bind('change', function (event) {
+                    var files = event.target.files;
+                    var typeoffile = attrs.typeoffile;
+                    var fileobj = { file: files, typeoffile: typeoffile };
+                    //iterate files since 'multiple' may be specified on the element
 
+                    //emit event upward
+                    scope.$emit("fileSelected", { file: fileobj });
+
+                });
+            }
+        };
+    });
 
 
 

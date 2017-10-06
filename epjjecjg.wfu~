@@ -5,18 +5,13 @@
     <link rel="shortcut icon" href="icon.ico" />
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
-
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link href="css/tickr-style-black.css" rel="stylesheet" />
     <link href="css/jquery-ui.min.css" rel="stylesheet" />
-   
-   
-    <link href="css/Style3.css" rel="stylesheet" />
-  <!--  <link href="css/bootsnipp.min.css" rel="stylesheet" /> -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    
+    <link href="css/bootsnipp.min.css" rel="stylesheet" />
+    <link href="css/Style3.css" rel="stylesheet" />
     <link href="css/loading-bar.css" rel="stylesheet" />
 
     <link href="css/Transition.css" rel="stylesheet" />
@@ -71,9 +66,6 @@
     <link href="css/editor.min.css" rel="stylesheet" />
 
     <script src="js/wysiwyg.min.js"></script>
-
-
-    <script src="script/dirDisqus.js"></script>
 
 
    
@@ -303,8 +295,6 @@ opacity:0.6  ;
                 display: none !important;
             }
         }
-
-
  .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: white;
    
@@ -331,9 +321,9 @@ color: #FFFFFF;
   <script>
 
       $(document).ready(function () {
-          //if ($(window).width() <= 768) {
-          //    $('.panel-collapse').removeClass('in');
-          //}
+          if ($(window).width() <= 768) {
+              $('.panel-collapse').removeClass('in');
+          }
       });
 
   </script>
@@ -450,15 +440,15 @@ color: #FFFFFF;
                         <div class="absolute-wrapper"> </div>
                         <!-- Menu -->
                         <div class="side-menu" id="fullcol" style="background-color:#616161">
-                            <nav class="navbar navbar-default" role="navigation" style="background-color:#616161">
+                            <nav class="navbar navbar-default" role="navigation">
                                 <!-- Main Menu -->
                                 <div class="side-menu-container">
                                     <ul class="nav navbar-nav" style="background-color:#616161;color:white">
-                                  
-                                        <li ng-show="agentRole.Agent"><a ui-sref="PaymentType" change-background2 count2="32" ng-style="count2 == 32 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161'}"><img src="images/icons-03.png" width="20px" height="20px" style="vertical-align:bottom;text-decoration:none" /> <span style="vertical-align:bottom;font-size:11px">Make Payment</span></a></li>
+                                        <li ng-show="agentRole.Agent"><a ui-sref="home" change-background2 count2="3" ng-style="count2 == 3 ? {'background-color': '#3D3D3D'  } : { 'background-color': '#616161'}"><img src="images/icons-02.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Mail</span></a></li>
+                                        <li ng-show="agentRole.Agent"><a ui-sref="Applicant" change-background2 count2="32" ng-style="count2 == 32 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161'}"><img src="images/icons-03.png" width="20px" height="20px" style="vertical-align:bottom;text-decoration:none" /> <span style="vertical-align:bottom;font-size:11px">Make Payment</span></a></li>
                                         <li ng-show="agentRole.Agent" class="panel panel-default" id="dropdown"     ng-style="count2 == 0 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
                                             <a data-toggle="collapse"  href="#dropdown-lvl1" eat-click style="text-decoration:none"  change-background2 count2="0" ng-style="count2 == 0 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
-                                                <img src="images/icon_Purchases Unused.png" width="20px" height="20px" style="vertical-align:bottom;text-decoration:none" /> <span style="vertical-align:bottom;font-size:11px">File Application</span>  <span class="caret"></span>
+                                                <img src="images/icon_Purchases Unused.png" width="20px" height="20px" style="vertical-align:bottom;text-decoration:none" /> <span style="vertical-align:bottom;font-size:11px">Purchases Unused</span>  <span class="caret"></span>
                                             </a>
 
                                             <!-- Dropdown level 1 -->
@@ -478,7 +468,7 @@ color: #FFFFFF;
 
                                         <li ng-show="agentRole.Agent" class="panel panel-default" id="dropdown"  ng-style="count2 == 10 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
                                             <a data-toggle="collapse" href="#dropdown-lvl3" eat-click  style="text-decoration:none" change-background2 count2="10" ng-style="count2 == 10 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
-                                                <img src="images/icon_Purchases Report.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Payment Report</span>  <span class="caret"></span>
+                                                <img src="images/icon_Purchases Report.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Purchases Report</span>  <span class="caret"></span>
                                             </a>
 
                                             <!-- Dropdown level 1 -->
@@ -499,7 +489,7 @@ color: #FFFFFF;
 
                                         <li ng-show="agentRole.Agent" class="panel panel-default" id="dropdown"  ng-style="count2 == 13 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
                                             <a data-toggle="collapse"  href="#dropdown-lvl3a" eat-click style="text-decoration:none" change-background2 count2="13" ng-style="count2 == 13 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
-                                                <img src="images/icon_Status.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Application Status</span>  <span class="caret"></span>
+                                                <img src="images/icon_Status.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Status</span>  <span class="caret"></span>
                                             </a>
 
                                             <!-- Dropdown level 1 -->
@@ -517,9 +507,19 @@ color: #FFFFFF;
                                             </div>
                                         </li>
 
+
+                                        <li ng-show="agentRole.Agent"><a href="#/UpdateRegistration" change-background2 count2="38" ng-style="count2 == 38 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/Profile.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Profile</span></a></li>
+                                        <li ng-show="agentRole.Agent"><a href="#" change-background2 count2="22" ng-style="count2 == 22 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-06.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Reports</span></a></li>
+                                        <li ><a href="#/SendMail" change-background2 count2="23" ng-style="count2 == 23 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-07.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Contact Us</span></a></li>
+
+                                        <!-- Dropdown-->
+                                  
+
+                                       
+
                                         <li ng-show="agentRole.Agent" class="panel panel-default" id="dropdown" ng-style="count2 == 24 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
                                             <a data-toggle="collapse" href="#dropdown-lvl3aa" eat-click style="text-decoration:none" change-background2 count2="24" ng-style="count2 == 24 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }">
-                                                <img src="images/icons-08.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Document Management</span>  <span class="caret"></span>
+                                                <img src="images/icons-08.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Documents</span>  <span class="caret"></span>
                                             </a>
 
                                             <!-- Dropdown level 1 -->
@@ -527,30 +527,13 @@ color: #FFFFFF;
                                                 <div class="panel-body">
                                                     <ul class="nav navbar-nav" style="background-color:#616161;color:white">
                                                         <li change-background3 count2="24" ng-style="count22 == 32 ? {'color': 'white' } : { 'color': 'white' }"><a href="#/Recordal" style="text-decoration:underline;"><img ng-show="count22 == '32'" src="images/sub-menu selection icon_Purchases Report copy.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:10px"> Recordal &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
-
-                                                        <li change-background3 count2="24" ng-style="count22 == 33 ? {'color': 'white' } : { 'color': 'white' }"><a href="#/Certificate" style="text-decoration:underline;"><img ng-show="count22 == '33'" src="images/sub-menu selection icon_Purchases Report copy.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:10px"> Pay  For Certificate &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
-
-                                                        <li change-background3 count2="24" ng-style="count22 == 34 ? {'color': 'white' } : { 'color': 'white' }"><a href="#/UploadDoc" style="text-decoration:underline;"><img ng-show="count22 == '34'" src="images/sub-menu selection icon_Purchases Report copy.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:10px"> Update Documents &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
-
+                                                       
 
 
                                                     </ul>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li ng-show="agentRole.Agent"><a ui-sref="home" change-background2 count2="3" ng-style="count2 == 3 ? {'background-color': '#3D3D3D'  } : { 'background-color': '#616161'}"><img src="images/icons-02.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">MailBox</span></a></li>
-                                        <li ng-show="agentRole.Agent"><a href="#/UpdateRegistration" change-background2 count2="38" ng-style="count2 == 38 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/Profile.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Profile</span></a></li>
-                                       
-                                        <li ng-show="agentRole.Agent" ><a href="#/SendMail" change-background2 count2="23" ng-style="count2 == 23 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-07.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Contact Us</span></a></li>
-
-                                        <li ng-show="agentRole.Agent"><a href="#" change-background2 count2="22" ng-style="count2 == 22 ? {'background-color': '#3D3D3D' } : { 'background-color': '#616161' }"><img src="images/icons-06.png" width="20px" height="20px" style="vertical-align:bottom" /> <span style="vertical-align:bottom;font-size:11px">Reports</span></a></li>
-
-                                        <!-- Dropdown-->
-                                  
-
-                                       
-
-                                        
 
 
 
@@ -591,8 +574,6 @@ color: #FFFFFF;
         </div>
 
         <div class="row container-fluid" style="overflow:hidden">
-
-
 
 
 

@@ -58,37 +58,38 @@ app.factory('authService2', [ '$http', '$q', '$rootScope', 'localStorageService'
 
                 var dsap2 = data.xid;
              
-              //  _checkaccess2();
-
-                authService.getAgentRole2(data.Sys_ID, data.xid).then(function (data, status) {
-
-
-                    localStorageService.set("agentRole", data);
-
-                    $rootScope.agentRole = localStorageService.get("agentRole");
+                //  _checkaccess2();
+                if (data.Sys_ID != null) {
+                    authService.getAgentRole2(data.Sys_ID, data.xid).then(function (data, status) {
 
 
-                    //authService.getEmailCount(dsap).then(function (data, status) {
-                    //    var dd = data;
-                    //    localStorageService.set("vcount", data);
-                    //    $location.path("/#");
+                        localStorageService.set("agentRole", data);
+
+                        $rootScope.agentRole = localStorageService.get("agentRole");
+
+
+                        //authService.getEmailCount(dsap).then(function (data, status) {
+                        //    var dd = data;
+                        //    localStorageService.set("vcount", data);
+                        //    $location.path("/#");
                        
-                    //});
+                        //});
 
 
 
-                    authService.getAgentemail(dsap).then(function (data, status) {
-                        var dd = data;
-                        localStorageService.set("Email", data);
-                        // $location.path("/#");
-                        $state.transitionTo('home', null, { 'reload': true });
-                       // $state.transitionTo('home');
+                        authService.getAgentemail(dsap).then(function (data, status) {
+                            var dd = data;
+                            localStorageService.set("Email", data);
+                             $state.transitionTo('home', null, { 'reload': true });
+                          
+
+                        });
+
+
 
                     });
 
-
-
-                });
+            }
 
 
 

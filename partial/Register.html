@@ -1,0 +1,675 @@
+﻿<style>
+    .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+        color: #a94442;
+    }
+
+    .help-block {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: red;
+    }
+
+    .center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+  
+     
+   
+   
+  
+  button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+         
+    }
+
+   
+    #btn-signup {
+            background-color :#06FBB5;
+               
+              
+    cursor:pointer;
+}
+     
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .btn-group-lg>.btn, .btn-lg {
+   padding-top:5px;
+   padding-bottom:5px;
+   
+  
+}
+
+    .ng-datepicker-input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+  
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+  
+   
+}
+
+   fieldset {
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+}
+
+   .btn-group-lg>.btn, .btn-lg2 {
+ padding-top:8px;
+   padding-bottom:8px;
+   
+  
+}
+
+            input::-webkit-input-placeholder {
+color: black !important;
+opacity:0.6 ;
+font-size:9px;
+
+
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: black !important;  
+opacity:0.6 ;
+font-size:9px;
+
+
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: black !important;  
+opacity:0.6 ;
+font-size:9px;
+
+}
+ 
+input:-ms-input-placeholder {  
+color: black !important; 
+opacity:0.6  ;
+font-size:9px;
+
+
+}
+
+
+
+
+
+            textarea::-webkit-input-placeholder {
+color: black !important;
+opacity:0.6 ;
+font-size:9px;
+
+
+}
+ 
+textarea:-moz-placeholder { /* Firefox 18- */
+color: black !important;  
+opacity:0.6 ;
+font-size:9px;
+
+
+}
+ 
+textarea::-moz-placeholder {  /* Firefox 19+ */
+color: black !important;  
+opacity:0.6 ;
+font-size:9px;
+
+}
+ 
+textarea:-ms-input-placeholder {  
+color: black !important; 
+opacity:0.6  ;
+font-size:9px;
+
+
+}
+
+
+</style>
+
+<style type="text/css">
+   
+</style>
+
+<div class="container-fluid" >
+    <br/>
+    <div  style="margin-left:370px" class="col-md-5">
+        <form name="userForm" class="form-horizontal"   ng-submit="submitForm2(userForm.$valid)" novalidate   >
+
+
+            <!--<ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">Bio Data</a></li>
+                <li><a href="#profile" data-toggle="tab">Company Info</a></li>
+                <li><a href="#messages" data-toggle="tab">Login Info</a></li>
+                <li><a href="#settings" data-toggle="tab">Supporting Document</a></li>
+            </ul>-->
+            <!--<div class="tab-content">-->
+
+
+
+            <div id="home">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border" style="font-weight:bold;font-size:11px"> Information of Principal Partner</legend>
+                    <div class="row">
+                        <div>
+
+                            <div>
+                                <div class="control-group">
+
+                                    <div class="controls">
+                                        <select ng-model="AccountType" ng-change="change2()" name="AccountType" class="form-control" data-ng-options="item for item in items" required>
+                                            <option value="">-- Select AccountType --</option>
+
+                                        </select>
+                                        <div ng-if="userForm.$submitted || userForm.AccountType.$touched">
+                                            <span class="help-block" data-ng-show="userForm.AccountType.$error.required">This is required.</span>
+                                            <p ng-show="userForm.AccountType.$invalid && !userForm.AccountType.$pristine" class="help-block">ACCOUNT TYPE is required.</p>
+                                        </div>
+
+                                    </div>
+                                    
+
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <div class="control-group">
+
+                                    <div class="controls">
+                                        <input name="name" class="form-control" placeholder="FIRSTNAME" ng-model="firstname" required
+                                               type="text" />
+
+                                        <div ng-if="userForm.$submitted || userForm.name.$touched">
+                                            <span class="help-block" data-ng-show="userForm.name.$error.required">This is required.</span>
+                                            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+                                        </div>
+</div>
+
+                                   
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <input name="surname" placeholder="SURNAME" class="form-control" ng-model="surname" required type="text" />
+                                    <div ng-if="userForm.$submitted || userForm.surname.$touched">
+                                        <span class="help-block" data-ng-show="userForm.surname.$error.required">This is required.</span>
+                                        <p ng-show="userForm.surname.$invalid && !userForm.surname.$pristine" class="help-block">You Surname is required.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <select ng-model="country" name="country" class="form-control" data-ng-options="c.code as c.name for c in countries" data-ng-change="GetStates()" required>
+                                        <option value="">-- Select Country --</option>
+                                    </select>
+
+                                    <!--<input id="dob" class="datepicker" type="text" />-->
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.country.$touched">
+                                    <span class="help-block" data-ng-show="userForm.country.$error.required">This is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <select ng-model="state" style="display:inline" class="form-control" name="state" data-ng-disabled="!states" data-ng-options="s.id as s.name for s in states" required>
+                                        <option value="">-- Select State --</option>
+                                    </select>
+                                    <!--<input id="email" type="text" />-->
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.state.$touched">
+                                    <span class="help-block" data-ng-show="userForm.state.$error.required">This is required.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <ng-datepicker ng-model="date" placeholder="DATE OF BIRTH" required format="MM/DD/YYYY" view-format="MM/DD/YYYY">
+                                    </ng-datepicker>
+
+
+                                    <div ng-if="userForm.$submitted || userForm.vdate.$touched">
+                                        <span class="help-block" data-ng-show="userForm.vdate.$error.required">This is required.</span>
+                                        <p ng-show="userForm.vdate.$invalid && !userForm.vdate.$pristine" class="help-block">Select Date.</p>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </fieldset>
+
+
+
+            </div>
+
+            <!--<div class="tab-pane" id="profile">-->
+            <fieldset class="scheduler-border">
+                <legend style="font-weight:bold;font-size:11px" class="scheduler-border">Company Information</legend>
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <input name="CompName" class="form-control" placeholder="COMPANY NAME" required ng-model="CompName" type="text" />
+                                    <!--<select id="AccountType">
+                                        <option></option>
+
+                                    </select>-->
+
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.CompName.$touched">
+                                    <span class="help-block" data-ng-show="userForm.CompName.$error.required">This is required.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <textarea name="CompAddress" class="form-control" placeholder="COMPANY ADDRESS" required ng-model="CompAddress" rows="5" cols="20"></textarea>
+
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.CompAddress.$touched">
+                                    <span class="help-block" data-ng-show="userForm.CompAddress.$error.required">This is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+
+
+                                    <input name="CompEmail" class="form-control" placeholder="COMPANY EMAIL" ng-model="CompEmail" type="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required />
+                                    <div ng-if="userForm.$submitted || userForm.CompEmail.$touched">
+                                        <span class="help-block" data-ng-show="userForm.CompEmail.$error.required">This is required.</span>
+
+                                        <p ng-show="userForm.CompEmail.$invalid && !userForm.CompEmail.$pristine" class="help-block">Email Invalid.</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <input name="CompPhone" placeholder="COMPANY PHONE" class="form-control" ng-model="CompPhone" type="text" />
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <input name="CompPerson" placeholder="CONTACT PERSON" class="form-control" ng-model="CompPerson" type="text" />
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <input name="ContactPhone" placeholder="CONTACT NUMBER" class="form-control" ng-model="ContactPhone" type="text" />
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <ng-datepicker ng-model="DobIncorp" placeholder="DATE INCORPORATED" format="MM/DD/YYYY" view-format="MM/DD/YYYY">
+                                    </ng-datepicker>
+
+
+                                    <!--<input name="DobIncorp" id="txt_application_date2" class="form-control" required ng-model="DobIncorp" datepicker type="text" />-->
+
+
+
+                                    <div ng-if="userForm.$submitted || userForm.DobIncorp.$touched">
+                                        <p ng-show="userForm.DobIncorp.$invalid && !userForm.DobIncorp.$pristine" class="help-block">Select Date.</p>
+                                    </div>
+                                    <!--<select id="AccountType">
+                                        <option></option>
+
+                                    </select>-->
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+                <!--</div>-->
+                <!--<div class="tab-pane" id="messages">-->
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <input name="VEMAIL" id="VEMAIL" placeholder="EMAIL" class="form-control" ng-model="vemail" ng-change="change(vemail)" required type="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" />
+                                    <div ng-if="userForm.$submitted || userForm.VEMAIL.$touched">
+                                        <span class="help-block" data-ng-show="userForm.VEMAIL.$error.required">This is required.</span>
+                                        <p ng-show="userForm.VEMAIL.$invalid && !userForm.VEMAIL.$pristine" class="help-block">Email Invalid.</p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <input name="password" class="form-control" placeholder="PASSWORD" ng-model="password" type="password" required />
+                                    <div ng-if="userForm.$submitted || userForm.password.$touched">
+                                        <span class="help-block" data-ng-show="userForm.password.$error.required">This is required.</span>
+                                        <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You password is required.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+
+                                <div class="controls">
+
+                                    <input name="ConfirmPassword" class="form-control" placeholder="CONFIRM PASSWORD" ng-model="ConfirmPassword" ng-match="password" type="password" required />
+
+                                    <div ng-if="userForm.$submitted || userForm.ConfirmPassword.$touched">
+                                        <span class="help-block" data-ng-show="userForm.ConfirmPassword.$error.required">This is required.</span>
+                                        <span class="help-block" data-ng-show="userForm.ConfirmPassword.$error.match">Passwords do not match.</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <!--</div>-->
+            <!--<div class="tab-pane" id="settings">-->
+            <fieldset class="scheduler-border">
+                <legend style="font-weight:bold;font-size:11px" class="scheduler-border">Document</legend>
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+                                <label style="font-weight:bold" class="control-label" for="cac2">CAC CERTIFICATE <span style="color:red">*PDF</span> </label>
+                                <div class="controls">
+
+
+                                    <input id="cac2" name="cac2" class="form-control" placeholder="CAC CERTIFICATE" file-upload typeoffile="CAC" required type="file" />
+
+                                    <!--<select id="AccountType">
+                                        <option></option>
+
+                                    </select>-->
+
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.cac2.$touched">
+                                    <span class="help-block" data-ng-show="userForm.cac2.$error.required">This is required.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <div class="control-group">
+                                <label style="font-weight:bold" class="control-label" for="Letter_Intro">A letter addressed to the Registrar introducing the principal partner and company representative <span style="color:red">*PDF</span> </label>
+                                <div class="controls">
+                                    <input id="Letter_Intro" name="Letter_Intro" file-upload typeoffile="Intro" required class="form-control" data-bind="value: loi" type="file" />
+
+
+
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.Letter_Intro.$touched">
+                                    <span class="help-block" data-ng-show="userForm.Letter_Intro.$error.required">This is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+
+                        <div>
+                            <div class="control-group">
+                                <label style="font-weight:bold" class="control-label" for="passport">Photograph of Principal Partner <span style="color:red">*JPEG</span> </label>
+                                <div class="controls">
+                                    <input id="passport" name="passport" file-upload typeoffile="Logo" required class="form-control" data-bind="value: passport" type="file" />
+
+                                    <!--<select id="AccountType">
+                                        <option></option>
+
+                                    </select>-->
+
+
+                                </div>
+                                <div ng-if="userForm.$submitted || userForm.passport.$touched">
+                                    <span class="help-block" data-ng-show="userForm.passport.$error.required">This is required.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+            <div class="row">
+
+                <div>
+                    <div>
+                        <button id="Button3" type="submit" ng-disabled="processing" class="btn-success btn-lg"> Submit <i class="glyphicon glyphicon-send glyphicon4"></i> </button>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!--</div>-->
+            <!--</div>-->
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </form>
+
+    </div>
+
+
+
+                       
+
+    <br/>
+<br/>
+
+    </div>
+    <!--</body>
+    </html>-->
+

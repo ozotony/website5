@@ -1,0 +1,209 @@
+﻿<style>
+
+    
+            input::-webkit-input-placeholder {
+color: black !important;
+opacity:0.6 ;
+
+
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: black  !important;  
+opacity:0.6 ;
+
+
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: black  !important;  
+opacity:0.6 ;
+
+}
+ 
+input:-ms-input-placeholder {  
+color: black  !important; 
+opacity:0.6  ;
+
+
+}
+
+
+     #btn-signup {
+            background-color :#06FBB5;
+               
+              
+    cursor:pointer;
+}
+     .glyphicon2 {
+
+         color:black !important;
+     }
+
+      .ng-datepicker-input {
+    display: block;
+    width: 100%;
+ 
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border:none ;
+    background-image: none;
+  
+   
+}
+</style>
+
+<br/>
+<br/>
+<div style="margin-left:320px" class="col-md-7" class="container">
+    <div class="row" style="margin-left:40px">
+        <span style="font-weight:bold;font-size:12px;" class="col-md-10"><img ng-src="http://88.150.164.30/EinaoTestEnvironment.IPO/{{Registration.Principal}}" class="img-rounded img-responsive"  style="padding-left:85px" alt="Pic"></span>
+    </div>
+    <br/>
+
+
+    <span style="font-weight:bold;font-size:12px;padding-left:12px">Personal Information</span>
+    <br />
+    <br />
+
+
+
+
+
+
+
+        <div class="col-md-6">
+            <input name="name" class="form-control col-md-6" ng-model="Registration.Firstname" required
+                   type="text" placeholder="Name" style="margin-bottom:4px;" />
+
+            <input name="name2" class="form-control col-md-6" ng-model="Registration.Email" style="margin-bottom:4px;" required
+                   type="text" placeholder="Email" />
+
+
+
+        </div>
+
+
+        <div class="col-md-6">
+
+           
+
+
+            <input name="name21" class="form-control col-md-6" ng-model="Registration.Surname" required
+                   type="text" placeholder="Surname" style="margin-bottom:4px;" />
+
+            <input name="name22" class="form-control col-md-6" ng-model="Registration.PhoneNumber" style="margin-bottom:4px;" required
+                   type="text" placeholder="Mobile" />
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+ 
+
+    <span style="font-weight:bold;font-size:12px;;padding-left:12px">Company Information</span>
+    <br />
+    <br />
+
+
+    <div class="col-md-6 ">
+
+        <input name="name31" class="form-control col-md-6" ng-model="Registration.CompanyName" style="margin-bottom:4px;" required
+               type="text" placeholder="Company Name" />
+
+        <input name="name32" class="form-control col-md-6" ng-model="Registration.CompanyAddress" required
+               type="text" placeholder="Address" />
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="col-md-6 ">
+
+        <input name="name" class="form-control col-md-6" ng-model="Registration.CompanyWebsite" style="margin-bottom:4px;" required
+               type="text" placeholder="Website" />
+
+
+        <ng-datepicker ng-model="Registration.IncorporatedDate" class="form-control col-md-6" required format="MM/DD/YYYY" placeholder="Date Of Incoporation" view-format="MM/DD/YYYY">
+        </ng-datepicker>
+
+
+
+
+
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+    <br />
+    <span style="font-weight:bold;font-size:12px;;padding-left:12px">Company Contact Information</span>
+    <br />
+    <br />
+
+
+
+
+
+    <div class="col-md-6 ">
+
+        <input name="name" class="form-control col-md-6" ng-model="Registration.ContactPerson" required
+               type="text" placeholder="Full Name" />
+
+
+
+
+    </div>
+
+
+    <div class="col-md-6 ">
+
+        <input name="name" class="form-control col-md-6" ng-model="Registration.ContactPersonPhone" required
+               type="text" placeholder="Mobile" />
+
+
+
+
+
+
+    </div>
+
+
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+
+
+    <div class="col-md-12">
+
+
+
+        <button id="btn-signup" type="button" ng-click="submitForm(Registration)" style="margin-left:469px;" class="btn ">Update Data &nbsp; <i class="glyphicon glyphicon-edit glyphicon2"></i>  </button>
+    </div>
+
+
+
+    <br />
+
+    </div>

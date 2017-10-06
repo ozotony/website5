@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .form-control {
+            background-color: #939393;
+            color: white;
+        }
+
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+           background-color: #939393;
+            color: white;
+            font-size: 16px;
+            width: 50%;
+
+            padding-left:2px
+
+          
+        }
+
+
+        input{
+              background-color: #939393;
+            color: white;
+            font-size: 16px;
+            width: 50%;
+
+           
+        }
+
+        select {
+            font-size: 12px;
+        }
+
+
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            background-color: #939393;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+              padding-left:2px
+        }
+
+        select option:checked,
+        select option:hover {
+            box-shadow: 0 0 10px 100px #000 inset;
+        }
+
+        button .glyphicon {
+            color: black !important;
+        }
+
+        .btn-success {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+            .btn-success:active {
+                color: black;
+                background-color: #06FBB5;
+                border-color: #06FBB5;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            border-top: 0px solid #ddd;
+        }
+
+        .btn-group-lg > .btn, .btn-lg {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <br/>
+        <br />
+      
+        <div class="col-md-7 col-md-offset-5 ">
+
+            <div style="font-weight:bold;font-size:16px"  > {{aa.Getstatus}} </div>
+
+
+
+        </div>
+        <br/>
+        <br/>
+        <br />
+        <div  class="col-md-8 col-md-offset-4 ">
+
+
+
+            <div class="table-responsive">
+
+                <table class="table">
+
+
+
+                    <tr>
+
+                        <td>
+                            <select id="Getstatus2" data-ng-options="c.Transaction_Status as c.Transaction_Status2 for c in varray43" ng-change="change(aa.Getstatus3)" name="status" ng-model="aa.Getstatus3">
+                                <option value="">--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Search Criteria   -- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            </select>
+
+
+
+
+                        </td>
+                    </tr>
+
+                    <tr ng-show="checked2">
+                        <td>
+
+                            <input type="text" ng-model="aa.OnlineNumber" data-tooltip="Enter File/Tp Number" ng-show="checked2"  id="OnlineNumber2" placeholder="File/Tp Number">
+
+                        </td>
+
+                    </tr>
+
+                    <tr ng-show="checked">
+                        <td>
+
+
+                            <input type="text" ng-model="aa.OnlineNumber" data-tooltip="Enter Rtm Number" ng-show="checked"  id="OnlineNumber" placeholder="Rtm Number">
+                        </td>
+
+                    </tr>
+
+                    <tr ng-show="checked4">
+
+                        <td>
+                            <br />
+
+                            
+
+                            <button id="Button3" type="submit" ng-click="Ddx3(aa.Getstatus3 ,aa.Getstatus,aa.OnlineNumber)" class="btn-success btn-lg"> Search <i class="glyphicon glyphicon-search"></i> </button>
+
+
+
+
+
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <br/>
+
+        <div class="row col-lg-11 col-md-11" ng-show="checked4">
+            <table ng-show="aa.Getstatus != 'CHANGEAGENT'" st-table="displayedCollection" st-safe-src="ListAgent" class="table form table-responsive  col-lg-3 col-md-3  table-striped">
+                <thead>
+                    <tr>
+                       
+
+
+                        <th st-sort="oai_no" class="tbbg2" style="font-weight:bold">OAI NUMBER</th>
+                        <th st-sort="reg_dt" class="tbbg2" style="font-weight:bold">FILING DATE</th>
+                        <th st-sort="reg_no" class="tbbg2" style="font-weight:bold"> FILE No</th>
+                        <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold">APPLICANT NAME</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">PRODUCT TITLE</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">AGENT CODE</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">AGENT NAME</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">CLASS</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">STATUS</th>
+
+
+
+
+                        <th class="tbbg2" style="font-weight:bold">PAY</th>
+
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+
+                      
+
+
+                        <td>{{row.oai_no}}</td>
+                        <td>{{row.reg_dt}}</td>
+                        <td>{{row.reg_no}}</td>
+                        <td>{{row.applicant_name}}</td>
+                        <td>{{row.product_title}}</td>
+                        <td>{{row.Agent_Code}}</td>
+                        <td>{{row.Agent_Name}}</td>
+                        <td>{{row.xclass}}</td>
+                        <td>{{row.xstat}}</td>
+
+
+
+
+
+                        <td align="center">
+
+                            <a  ng-click="add2(row,aa.Getstatus); $event.preventDefault(); $event.stopPropagation();" class="icon-bar" href="#"> <i class="fa  fa-paypal "></i></a>
+                        </td>
+
+
+
+
+
+
+
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+            <table ng-show="aa.Getstatus == 'CHANGEAGENT'" st-table="displayedCollection" st-safe-src="ListAgent" class="table form table-responsive  col-lg-3 col-md-3  table-striped">
+                <thead>
+                    <tr>
+
+
+
+                        <th st-sort="oai_no" class="tbbg2" style="font-weight:bold">OAI NUMBER</th>
+                        <th st-sort="reg_dt" class="tbbg2" style="font-weight:bold">FILING DATE</th>
+                        <th st-sort="reg_no" class="tbbg2" style="font-weight:bold"> FILE No</th>
+                        <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold">APPLICANT NAME</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">PRODUCT TITLE</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">AGENT CODE</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">AGENT NAME</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">CLASS</th>
+                        <th st-sort="product_title" class="tbbg2" style="font-weight:bold">STATUS</th>
+
+
+
+
+                        <th class="tbbg2" style="font-weight:bold">CHANGE</th>
+
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+
+
+
+
+                        <td>{{row.oai_no}}</td>
+                        <td>{{row.reg_dt}}</td>
+                        <td>{{row.reg_no}}</td>
+                        <td>{{row.applicant_name}}</td>
+                        <td>{{row.product_title}}</td>
+                        <td>{{row.Agent_Code}}</td>
+                        <td>{{row.Agent_Name}}</td>
+                        <td>{{row.xclass}}</td>
+                        <td>{{row.xstat}}</td>
+
+
+
+
+
+                        <td align="center">
+
+                            <a ng-click="add8(row,aa.Getstatus); $event.preventDefault(); $event.stopPropagation();" class="icon-bar" href="#"> <i class="fa  fa-pencil-square-o "></i></a>
+                        </td>
+
+
+
+
+
+
+
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

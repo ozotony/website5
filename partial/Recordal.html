@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .form-control {
+            background-color: #939393;
+            color: white;
+        }
+
+       input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            color: white;
+           
+            font-size: 16px;
+            width:80%;
+        }
+
+       select  {
+           
+           
+            font-size: 12px;
+        }
+
+
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            color: white;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        select option:checked,
+        select option:hover {
+            box-shadow: 0 0 10px 100px #000 inset;
+        }
+
+        button .glyphicon {
+            color: black !important;
+        }
+
+        .btn-success {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+            .btn-success:active {
+                color: black;
+                background-color: #06FBB5;
+                border-color: #06FBB5;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            border-top: 0px solid #ddd;
+        }
+
+        .btn-group-lg > .btn, .btn-lg {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-md-8 col-md-offset-4 " >
+
+            <div style="font-weight:bold;font-size:16px">  Recordal</div>
+
+
+
+        </div>
+        <div style="margin-left:2px" class="col-md-12">
+            
+            <div class="table-responsive">
+
+                <table class="table">
+
+
+
+                    <tr>
+
+                        <td>
+                            <select id="Getstatus" data-ng-options="c.Transaction_Status as c.Transaction_Status2 for c in varray44" name="status" ng-model="aa.Getstatus">
+                                <option value="">-- Select Recordal Type   --</option>
+                            </select>
+
+
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <br />
+
+
+
+                            <button id="Button3" type="submit" ng-click="Ddx(aa.Getstatus)" class="btn-success btn-lg"> Proceed <i class="glyphicon glyphicon-arrow-right"></i> </button>
+
+
+
+
+
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+
+</div>
+        </div>
+</body>
+</html>

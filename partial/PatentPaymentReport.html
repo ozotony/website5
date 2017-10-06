@@ -1,0 +1,338 @@
+﻿<style>
+    button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+    .dds {
+        margin-left: 300px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-success:hover {
+        background-color: #7F7F7F;
+        border-color: #7F7F7F;
+        text-shadow: none !important;
+    }
+
+    .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+        color: black;
+        cursor: default;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+    }
+</style>
+<div class="container-fluid" ng-show="agentRole.Agent">
+    <br />
+    <script type="text/ng-template" id="myModalContent2.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title"><span style="font-weight:bold ;font-size:10px ;"> Payment Details </span></h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div> <span style="font-weight:bold"> Transaction Id :  </span>{{data2.twallet.transID}} </div>
+
+                    <div> <span style="font-weight:bold"> Transaction Date :  </span>{{data2.twallet.xreg_date}} </div>
+
+                    <div> <span style="font-weight:bold"> Payment Reference :  </span>{{data2.InterSwitchPostField.pay_ref}} </div>
+
+
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+
+                <div class="col-md-12" style="background-color:#3D3D3D ;color:white;height: 40px;">
+
+                    <div style="margin-top:15px"> <span style="font-weight:bold;padding-top:40px">Customer Details  </span> </div>
+
+
+
+                </div>
+            </div>
+
+            <br />
+
+            <table class="table">
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div>
+
+
+                                <div class="col-md-5" style="background-color:#3D3D3D ;color:white;height:40px">
+
+                                    <div style="margin-top:15px"><span style="font-weight:bold;padding-top:40px"> Applicant  Details </span> </div>
+
+
+
+                                </div>
+
+
+                                <div class="col-md-5 col-md-offset-2" style="background-color:#3D3D3D ;color:white;height:40px">
+
+                                    <div style="margin-top:15px"><span style="font-weight:bold;padding-top:40px"> Agent  Details </span> </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <div class="row">
+
+
+                            <div class="col-md-5">
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px ;line-height:20px"> Full Name :  </span> <span style="line-height:20px"> {{data2.applicant.xname}} </span>   </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Address :  </span> <span style="line-height:20px"> {{data2.applicant.address}} </span> </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Email Address :  </span> <span style="line-height:20px"> {{data2.applicant.xemail}} </span> </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Phone Number :  </span> <span style="line-height:20px"> {{data2.applicant.xmobile}} </span> </div>
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+
+                            <div class="col-md-5 col-md-offset-2">
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Full Name :  </span> <span style="line-height:20px"> {{agent.Surname}} </span> </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Code :  </span> <span style="line-height:20px"> {{agent.Sys_ID}} </span> </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Email Address :  </span> <span style="line-height:20px"> {{agent.Email}} </span> </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="divLast col-md-12 "> <span style="font-weight:bold ;padding-left:8px;line-height:20px"> Phone Number :  </span> <span style="line-height:20px"> {{agent.PhoneNumber}} </span></div>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+            <br />
+
+            <div class="row">
+
+                <div class="col-md-12" style="background-color:#3D3D3D ;color:white ;height: 40px;">
+
+                    <div style="margin-top:15px"> <span style="font-weight:bold;padding-top:40px">  Purchase Details </span> </div>
+
+
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+
+                <table class="col-md-12   table table-bordered">
+                    <thead class="cf">
+                        <tr>
+                            <th>SN</th>
+
+                            <th>ITEM DESCRIPTION</th>
+                            <th>Init Amount</th>
+                            <th>Tech  Amount</th>
+
+                            <th>QTY</th>
+                            <th>TOTAL (NGN)</th>
+
+
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection2">
+
+                            <td data-title="CODE">{{$index + 1}}</td>
+
+                            <td data-title="DESCRIPTION">{{row.xdesc}}</td>
+                            <td data-title="DESCRIPTION">{{row.init_amt|currency:""}}</td>
+                            <td data-title="DESCRIPTION">{{row.tech_amt|currency:""}}</td>
+
+                            <td data-title="QUANTITY">{{row.xqty}}</td>
+
+                            <td data-title="AMOUNT">{{row.tot_amt|currency:""}}</td>
+                        </tr>
+
+                        <tr>
+                            <td data-title="CODE2"></td>
+                            <td data-title="CODE"></td>
+
+                            <td data-title="DESCRIPTION"></td>
+
+                            <td data-title="QUANTITY"></td>
+                            <td data-title="QUANTITY"></td>
+                            <td data-title="TOTAL AMOUNT ">Convenient Fee&nbsp;<strong>{{data2.InterSwitchPostField.isw_conv_fee|currency:""}}</strong></td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td data-title="CODE2"></td>
+                            <td data-title="CODE"></td>
+
+                            <td data-title="DESCRIPTION"></td>
+
+                            <td data-title="QUANTITY"></td>
+                            <td data-title="QUANTITY"></td>
+                            <td data-title="TOTAL AMOUNT ">NGN&nbsp;<strong>{{vTotal|currency:""}}</strong></td>
+
+
+
+                        </tr>
+
+                    </tbody>
+
+
+
+
+                </table>
+                <button ng-click="submitForm3()" class="btn-success btn-lg btn-space no-print" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon glyphicon-print"></i> &nbsp Print Slip   </button>
+
+            </div>
+
+
+            <br />
+        </div>
+
+
+        <div class="modal-footer">
+
+
+            <button ng-click="ok()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon glyphicon-remove"></i> &nbsp Close  </button>
+
+        </div>
+
+
+    </script>
+    <div align="center" class="no-print" style="font-size:20px;">  Patent Purchased Item </div>
+    <br />
+    <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered no-print">
+        <thead>
+            <tr>
+                <th class="tbbg2" style="font-weight:bold"><b> S/N </b></th>
+                <th st-sort="oai_no" class="tbbg2" style="font-weight:bold"><b>TRANSACTION ID</b></th>
+                <th st-sort="reg_dt" class="tbbg2" style="font-weight:bold"><b>ITEM CODE</b></th>
+                <th st-sort="reg_dt" class="tbbg2" style="font-weight:bold"><b>ITEM DESCRIPTION</b></th>
+                <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold"><b>PAYMENT DATE</b></th>
+                <th st-sort="applicant_name" class="tbbg2" style="font-weight:bold"><b>DETAILS</b></th>
+
+
+
+
+            </tr>
+            <tr>
+                <th colspan="7"><input id="aa" st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayedCollection">
+
+                <td align="center">{{row.sn}}</td>
+                <td align="center">{{row.newtransID}}</td>
+                <td align="center">{{row.item_code}}</td>
+                <td align="center">{{row.item_desc}}</td>
+                <td align="center">{{row.payment_date}}</td>
+                <td align="center"><input type="radio" ng-value="false" name="vselect" ng-click=vchange(row) ng-model="select"></td>
+
+
+
+
+
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="col-md-7 col-md-offset-5">
+
+
+
+       
+        <!--<span style="margin-left:8px;">or</span>-->
+
+    </div>
+
+</div>
+
+

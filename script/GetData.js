@@ -3,12 +3,16 @@ var app = angular.module('app');
 
 app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', function ($http, $q, $rootScope, localStorageService) {
   //  alert("inside43")
-     var serviceBase = 'http://88.150.164.30/NewTrademark/';
-  //  var serviceBase = 'http://localhost:24322/';
+    var serviceBase = 'http://88.150.164.30/NewTrademark/';
+   //  var serviceBase = 'http://localhost:24322/';
 
-    var serviceBaseCld = "http://ipo.cldng.com/";
+    var serviceBaseAdmin = 'http://88.150.164.30/CldAdmin/';
 
-  //  var serviceBaseCld = "http://localhost:4556/";
+    var serviceBaseCld = "http://45.40.139.163/EinaoTestEnvironment.CLD/";
+
+    //  var serviceBaseCld = "http://localhost:4556/";
+
+    var oldserviceBase = 'http://88.150.164.30/EinaoTestEnvironment.IPO/Handlers/GetRegistration.ashx';
 
     
 
@@ -131,9 +135,97 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
 
             deferred.reject(err);
         });
+       
+        return deferred.promise;
+
+    };
+
+    var _GetPendingContent = function (registration) {
+        var dd = "";
+        var data = {
+            property1: registration
+        };
+        return $http.get(serviceBaseAdmin + 'api/account/GetPendingContent', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+        .success(function (response) {
+            return response;
+        })
+        .error(function (response) {
+            return response
+        });
+
+
         //return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
         //    return response;
         //});
+
+    };
+
+
+    var _SaveUser = function (dd) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd
+        };
+
+
+        $http.get(serviceBase + 'api/account/SaveUser', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+            //  alert("tony response ="+response);
+            //  localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+
+    var _GetAgent = function (dd) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+       // var serviceBase = 'http://ipo.cldng.com/Handlers/GetRegistration.ashx';
+
+      
+
+
+        var Encrypt = {
+            vid: dd
+        }
+
+
+        $http({
+            method: 'POST',
+            url: oldserviceBase,
+            transformRequest: function (obj) {
+                var str = [];
+                for (var p in obj)
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                return str.join("&");
+            },
+            data: Encrypt,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8;' }
+        })
+          .success(function (response) {
+
+            //  alert("tony response ="+response);
+            //  localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
 
         return deferred.promise;
 
@@ -699,6 +791,30 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
 
 
 
+    var _getUpdatePayment = function (dd) {
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd
+        };
+
+
+        $http.get(serviceBase + 'api/account/UpdatePaymentUsed', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+
+        return deferred.promise;
+
+    };
+
+
+
     var _getDesignStatus = function (dd) {
         // var serviceBase2 = "http://localhost:24322/";
         var deferred = $q.defer();
@@ -755,8 +871,188 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
     };
 
 
-    var _PostAll = function (dd) {
+    var _getdata = function (dd, dd2) {
         // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/GetData', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+
+    var _getdata2 = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/GetData2', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+
+    var _getdata3 = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/GetData3', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+    var _getdata4 = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/GetData4', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+    var _getPaymentReport = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/getPaymentReport', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+    var _getPaymentReport2 = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/getPaymentReport2', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+
+
+    var _UpdateCertificate = function (dd, dd2) {
+        // var serviceBase2 = "http://localhost:24322/";
+        var deferred = $q.defer();
+
+        var data = {
+            property1: dd,
+            property2: dd2
+        };
+
+
+        $http.get(serviceBase + 'api/account/UpdateCertificate', { params: data }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+
+
+
+            deferred.resolve(response);
+
+        }).error(function (err, status) {
+
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+
+    };
+
+
+    var _PostAll = function (dd) {
+       // var serviceBaseCld2 = "http://localhost:49703/";
         var deferred = $q.defer();
 
         $http.post(serviceBaseCld + '/Handlers/Save_GenericApplication7.ashx', dd, { headers: { 'Content-Type': undefined } }).success(function (response) {
@@ -1296,6 +1592,23 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
 
     authServiceFactory.getAgentRole2 = _getAgentRole2;
     authServiceFactory.GetAgentStatus = _GetAgentStatus;
+    authServiceFactory.GetAgent = _GetAgent;
+    authServiceFactory.SaveUser = _SaveUser
+
+    authServiceFactory.getPaymentReport = _getPaymentReport
+    authServiceFactory.getPaymentReport2 = _getPaymentReport2
+
+    authServiceFactory.GetPendingContent = _GetPendingContent
+    authServiceFactory.GetUpdatePayment = _getUpdatePayment
+
+    authServiceFactory.UpdateCertificate = _UpdateCertificate
+
+    authServiceFactory.getdata2 = _getdata2
+
+    authServiceFactory.getdata = _getdata
+    authServiceFactory.getdata3 = _getdata3
+
+    authServiceFactory.getdata4 = _getdata4
     return authServiceFactory;
 }]);
 

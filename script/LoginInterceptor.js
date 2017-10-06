@@ -8,6 +8,7 @@ app.factory('authInterceptorService', ['$q', '$location', '$rootScope', 'localSt
 
         config.headers = config.headers || {};
 
+       // alert("url = " + config.url)
         // var authData = localStorageService.get('authorizationData');
        
         if (localStorageService.get("access_token") == null) {
@@ -22,7 +23,7 @@ app.factory('authInterceptorService', ['$q', '$location', '$rootScope', 'localSt
         //  swal("token =" + authData)
 
 
-        if (authData) {
+        if (authData && config.url.indexOf($location.host()) > -1) {
             //  config.headers.Authorization = 'Bearer ' + authData.token;
          
             config.headers.Authorization = 'Bearer ' + authData;

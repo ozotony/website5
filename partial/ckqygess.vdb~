@@ -50,7 +50,7 @@
     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         color: white;
         font-weight: bold;
-        font-size: 16px;
+        font-size: large;
     }
 
     input:-moz-placeholder, textarea:-moz-placeholder {
@@ -179,25 +179,11 @@
     border-color: #06FBB5;
 }
 
-   #tickr-box {
-   
-    max-width: 1300px;
-    
-    
-}
-
-    #tickr-scroll {
-       
-        height: 40px;
-    }
-
    
 </style>
 
 
 <div  ng-show=islogout>
-
-
 
     <div class="row">
         <div class="col-md-12   ">
@@ -227,11 +213,11 @@
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                    <form id="loginform" name="userForm" class="form-horizontal" ng-submit="submitForm(vform,userForm.$valid)"  novalidate role="form">
+                    <form id="loginform" name="userForm" class="form-horizontal" ng-submit="submitForm(vform,userForm.$valid)" novalidate role="form">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon2 glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control " name="username" required ng-model="vform.username" placeholder="Username">
+                            <input id="login-username" type="text" class="form-control form-control2" name="username" required ng-model="vform.username" placeholder="Username">
 
 
 
@@ -266,7 +252,7 @@
                         </div>
 
                         <div class="col-md-offset-4 ">
-                            <button id="btn-signup" style="margin-right:0px ;font-weight:bold ;padding-top:5px; padding-bottom:5px; font-size:10px" type="submit" class="btn pull-right "><i class="icon-hand-right"></i> &nbsp Login </button>
+                            <button id="btn-signup" style="margin-right:0px ;font-weight:bold ;font-size:10px" type="submit" class="btn pull-right "><i class="icon-hand-right"></i> &nbsp Login </button>
                             <!--<span style="margin-left:8px;">or</span>-->
                         </div>
 
@@ -300,22 +286,7 @@
     <br />
 
     <div class="row news2" >
-        <div style="align-content:center" class="center-side">
-            <img style="padding-left:650px" src="images/news2.png" />
-        </div>
-        <div id="tickr-box">
-            <div class="tickr-title" style="background-color:#3D3D3D;color:#0FDBA1;">Latest News</div>
-            <div id="tickr-scroll">
-                <ul>
-                   
-                    
-                    <li ng-repeat="row in vcontent"><a href="" ng-click="submit4(row)">{{row.Headline}}</a></li>
-                </ul>
-            </div>
-        </div>
-
-
-      
+        <img src="images/news.png" />
        
     </div>
  

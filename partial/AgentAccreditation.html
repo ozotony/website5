@@ -40,6 +40,107 @@
 </style>
 <div class="container-fluid" ng-show="agentRole.Agent">
     <br />
+    <script type="text/ng-template" id="myModalContent3.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title"><span style="font-weight:bold ;font-size:10px ;"> APPLICATION </span></h3>
+        </div>
+
+        <div class="modal-body">
+            <p>
+                <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                 
+                    <tbody>
+                        <tr >
+                            <td>FIRSTNAME</td>
+                            <td align="center">{{vdetail.FirstName}}</td>
+                            </tr>
+
+                        <tr>
+                            <td>SURNAME</td>
+                            <td align="center">{{vdetail.SurName}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>EMAIL</td>
+                            <td align="center">{{vdetail.Email}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>DATE OF BIRTH</td>
+                            <td align="center">{{vdetail.DateOfBrith}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>COMPANY NAME</td>
+                            <td align="center">{{vdetail.CompanyName}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>COMPANY ADDRESS</td>
+                            <td align="center">{{vdetail.CompanyAddress}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>CONTACT PERSON</td>
+                            <td align="center">{{vdetail.ContactPerson}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>CONTACT PERSON PHONE</td>
+                            <td align="center">{{vdetail.ContactPersonPhone}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>ACCREDITATION TYPE</td>
+                            <td align="center">{{vdetail.AccrediationType}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>REGISTRATION DATE</td>
+                            <td align="center">{{vdetail.xreg_date}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>CERTIFICATE</td>
+                            <td align="center"><a href="http://88.150.164.30/EinaoTestEnvironment.IPO/{{vdetail.Certificate}}" target="_blank">Download</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>PASSPORT</td>
+                            <td align="center"><a href="http://88.150.164.30/EinaoTestEnvironment.IPO/{{vdetail.Logo}}" target="_blank">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>LETTER OF INTRODUCTION</td>
+                            <td align="center"><a href="http://88.150.164.30/EinaoTestEnvironment.IPO/{{vdetail.Introduction}}" target="_blank">Download</a></td>
+                        </tr>
+                            
+
+                       
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </p>
+        </div>
+
+
+        <div class="modal-footer">
+
+
+            <button ng-click="ok()" class="btn-success btn-lg btn-space" style="font-weight:bold ;font-size:10px ;" type="submit"> <i class="glyphicon glyphicon-remove"></i> &nbsp Close  </button>
+
+        </div>
+
+
+    </script>
+
+
+
     <div align="center" style="font-size:20px;"> ACCREDITED AGENT ADMIN </div>
     <br />
     <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">

@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .form-control {
+            background-color: #939393;
+            color: white;
+        }
+
+        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            background-color: #939393;
+            color: white;
+            font-size: 16px;
+            width: 50%;
+            padding-left: 2px;
+        }
+
+
+        input {
+            background-color: #939393;
+            color: white;
+            font-size: 16px;
+            width: 50%;
+        }
+
+        select {
+            font-size: 12px;
+        }
+
+
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            background-color: #939393;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 2px;
+        }
+
+        select option:checked,
+        select option:hover {
+            box-shadow: 0 0 10px 100px #000 inset;
+        }
+
+        button .glyphicon {
+            color: black !important;
+        }
+
+        .btn-success {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+            .btn-success:active {
+                color: black;
+                background-color: #06FBB5;
+                border-color: #06FBB5;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            border-top: 0px solid #ddd;
+        }
+
+        .btn-group-lg > .btn, .btn-lg {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <br />
+        <br />
+
+       
+     
+        <div class="col-md-8 col-md-offset-4 ">
+
+
+
+            <div class="table-responsive">
+
+                <table class="table">
+
+
+
+                    <tr>
+
+                        <td>
+                            <select id="Getstatus2" data-ng-options="c.Transaction_Status as c.Transaction_Status2 for c in varray43"  name="status" ng-model="aa.Getstatus">
+                                <option value="">--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Document Type   -- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            </select>
+
+
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr ng-show="aa.Getstatus">
+
+                        <td>
+                            <select id="Getstatus2" data-ng-options="c.Transaction_Status as c.Transaction_Status2 for c in varray44" name="status" ng-model="aa.Getstatus2">
+                                <option value="">--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Search Criteria   -- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            </select>
+
+
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr ng-show="aa.Getstatus2 =='Online No' ">
+                        <td>
+
+                            <input type="text" ng-model="aa.OnlineNumber" data-tooltip="Enter Online Number"  id="OnlineNumber2" placeholder="Online Number">
+
+                        </td>
+
+                    </tr>
+
+                    <tr ng-show="aa.Getstatus2 =='File/Tp No' ">
+                        <td>
+
+
+                            <input type="text" ng-model="aa.OnlineNumber" data-tooltip="Enter File/Tp  Number"  id="OnlineNumber" placeholder="File/Tp Number">
+                        </td>
+
+                    </tr>
+
+
+                   
+
+                    
+                    <tr ng-show="aa.Getstatus2" >
+
+                        <td>
+                            <br />
+
+
+
+                         
+
+                            <button id="Button3" type="submit" ng-click="Ddx(aa.Getstatus,aa.Getstatus2,aa.OnlineNumber)" class="btn-success btn-lg">Search <i class="glyphicon glyphicon-search"></i> </button>
+
+
+
+
+
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            </div>
+
+
+
+            <div ng-show="showtrademark">
+                <form name="userForm" class="form-horizontal" ng-submit="submitForm(userForm.$valid)">
+
+                    <modal-dialog show='dialogShown' dialog-title='SEARCH RECORDAL'>
+
+                        <table width="100%" border="0" cellspacing="1" cellpadding="4" class="table" align="center">
+                            <thead>
+                                <tr>
+                                    <th>RECORDAL REQUEST DATE </th>
+                                    <th>RECORDAL_TYPE</th>
+
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in displayedCollection" ng-class="{'pending-delete': add2(row)}">
+
+                                    <td>{{row.RECORDAL_REQUEST_DATE2  }}</td>
+                                    <td>{{row.RECORDAL_TYPE3}}</td>
+
+                                    <td>
+                                        <a href="#" ng-click="EditRow2(row);$event.preventDefault(); $event.stopPropagation();">Select Recordal </a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+
+
+                    </modal-dialog>
+                    <div>
+
+
+                        <table  class="table">
+                            <tr>
+                                <td>
+                                    <div id="searchform">
+                                        <table style="width:100%;font-family:Calibri;" id="applicantForm" align="center" class=" table-bordered">
+
+                                            <tr>
+                                                <td colspan="2" align="center"></td>
+                                            </tr>
+
+
+
+                                            <caption>
+
+                                               
+                                                <tr>
+                                                    <td>&nbsp;APPLICANT NAME:&nbsp; </td>
+                                                    <td>
+                                                        <div>
+                                                            <input name="applicant_name"  ng-model="formData.ng_applicant_name" disabled type="text" />
+
+
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                                
+                                              
+                                                
+                                                <tr>
+                                                    <td>&nbsp;TITLE OF TRADEMARK:</td>
+                                                    <td>
+                                                        <input name="title_of_trademark"  ng-model="formData.title_of_trademark" disabled type="text" />
+
+                                                    </td>
+                                                </tr>
+                                               
+                                                <tr>
+                                                    <td width="20%">&nbsp;FILE/TP NUMBER:</td>
+                                                    <td>
+                                                        <input name="application_no" id="application_no"  ng-model="formData.application_no" disabled type="text" />
+
+
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                
+                                              
+                                                <!--<tr>
+                                            <td>&nbsp;DESCRIPTION OF GOODS AND SERVICES:&nbsp;</td>
+                                            <td>
+                                                <textarea class="form-control" cols="25" name="txt_goods_desc" ng-model="txt_goods_desc" rows="4"></textarea>
+                                            </td>
+                                        </tr>-->
+                                                
+                                                <!--<tr>
+                                            <td>&nbsp;DISCLAIMER(If any):</td>
+                                            <td>
+                                                <input name="txt_discalimer" class="form-control" ng-model="txt_discalimer" type="text" />
+                                            </td>
+                                        </tr>-->
+                                                
+
+                                               
+                                                <tr>
+                                                    <td align="left" colspan="2" style="background-color:#999999;">&nbsp;</td>
+                                                </tr>
+                                                <table id="doc_tbl" align="center" style="width:100%;font-family:Calibri;">
+                                                    <tr>
+                                                        <td class="tbbg" colspan="2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" colspan="2" style="color:Red; font-size:16px;"><strong>(NOTE: DOCUMENTS ATTACHED SHOULD BE OF PDF FORMAT ONLY AND NOT MORE THAN 3MB EACH!!)</strong> </td>
+                                                    </tr>
+                                                    <tr style="background-color:#999999;">
+                                                        <td align="left" class="tbbg_left2" style="width:25%;">&nbsp;ITEMS</td>
+                                                        <td align="left" class="tbbg_left2">ATTACH DOCUMENT</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">&nbsp;TRADEMARK REPRESENTATION : </td>
+                                                        <td align="left">
+                                                            <input id="File1" type="file" /> <a target="_blank" ng-href="{{formData.logo_pic}}" ng-if="formData.show">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" colspan="2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">&nbsp;POWER OF ATTORNEY : </td>
+                                                        <td align="left">
+                                                            <input id="File2" type="file" /> <a target="_blank" ng-href="{{formData.auth_doc}}" ng-if="formData.show4">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <td align="left">&nbsp;SUPPORTING DOCUMENT 1 : </td>
+                                                        <td align="left">
+                                                            <input id="File5" type="file" /> <a target="_blank" ng-href="{{formData.sup_doc1}}" ng-if="formData.show2">View</a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">&nbsp;SUPPORTING DOCUMENT 2  (IF ANY):</td>
+                                                        <td align="left">
+                                                            <input id="File4" type="file" /> <a target="_blank" ng-href="{{formData.sup_doc2}}" ng-if="formData.show3">View</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <tr>
+                                                    <td  colspan="2">
+                                                        <button id="Button3" type="submit" ng-click="Ddx10(aa.Getstatus,aa.Getstatus2,aa.OnlineNumber)" class="btn-success btn-lg">Update  </button>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </caption>
+                                        </table>
+
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div ng-show="showpatent" class="col-md-8 col-md-offset-4">
+                <form name="userForm" class="form-horizontal" ng-submit="submitForm(userForm.$valid)">
+                    <div>
+
+
+                        <table  class="table">
+                            <tr>
+                                <td>
+                                    <div id="searchform">
+                                       
+                                        <table style="width:100%;font-family:Calibri;" id="applicantForm" align="center" class="table-bordered" >
+
+                                            <tr>
+                                                <td colspan="2" align="center"></td>
+                                            </tr>
+
+
+
+                                           
+
+                                                
+                                                <tr>
+                                                    <td>&nbsp;REGISTRATION NUMBER:&nbsp; </td>
+                                                    <td>
+                                                        <div>
+                                                            <input name="applicant_name"  ng-model="formData.reg_number" disabled type="text" />
+
+
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;TITLE:&nbsp;</td>
+                                                    <td>
+                                                        <textarea  cols="25" name="applicant_address" ng-model="formData.title_of_invention" disabled rows="4"></textarea>
+
+                                                    </td>
+                                                </tr>
+                                                
+
+
+
+                                               <tr>
+                                                   <td align="center" colspan="2">
+                                                       <table id="doc_tbl" style="width:100%;font-family:Calibri;">
+                                                    
+                                                           <tr>
+                                                               <td align="center" colspan="2" style="color:Red; font-size:16px;"><strong>(NOTE: DOCUMENTS ATTACHED SHOULD BE OF PDF FORMAT ONLY AND NOT MORE THAN 3MB EACH!!)</strong> </td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="left">&nbsp;LETTER OF AUTHORIZATION OF AGENT(FORM 2) : </td>
+                                                               <td align="left">
+                                                                   <input id="File1" type="file" /> <a target="_blank" ng-href="{{formData.logo_pic}}" ng-if="formData.show">View</a>
+                                                               </td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="center" colspan="2"></td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="left">&nbsp;CLAIM(S) : </td>
+                                                               <td align="left">
+                                                                   <input id="File2" type="file" /> <a target="_blank" ng-href="{{formData.auth_doc}}" ng-if="formData.show2">View</a>
+                                                               </td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td colspan="2"></td>
+                                                           </tr>
+
+                                                           <tr>
+                                                               <td colspan="2"></td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="left">&nbsp;PCT DOCUMENT:</td>
+                                                               <td align="left">
+                                                                   <input id="File3" type="file" /> <a target="_blank" ng-href="{{formData.sup_doc2}}" ng-if="formData.show3">View</a>
+                                                               </td>
+                                                           </tr>
+
+
+                                                           <tr>
+                                                               <td colspan="2"></td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="left">&nbsp;DEED OF ASSIGNMENT:</td>
+                                                               <td align="left">
+                                                                   <input id="File4" type="file" /> <a target="_blank" ng-href="{{formData.sup_doc3}}" ng-if="formData.show4">View</a>
+                                                               </td>
+                                                           </tr>
+
+                                                           <tr>
+                                                               <td colspan="2"></td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td align="left">&nbsp;COMPLETE SPECIFICATION (FORM 3):</td>
+                                                               <td align="left">
+                                                                   <input id="File5" type="file" /> <a target="_blank" ng-href="{{formData.sup_doc4}}" ng-if="formData.show5">View</a>
+                                                               </td>
+                                                           </tr>
+                                                       </table>
+                                                   </td>
+                                               </tr>
+                                               
+                                           
+                                                <tr>
+                                                    <td align="center" colspan="2">
+
+                                                        <button id="Button3" type="submit" ng-click="Ddx10(aa.Getstatus,aa.Getstatus2,aa.OnlineNumber)" class="btn-success btn-lg">Update  </button>
+                                                    </td>
+                                                </tr>
+                                           
+                                        </table>
+
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+        <br />
+
+      
+
+
+
+    </div>
+</body>
+</html>
+
+
+
+

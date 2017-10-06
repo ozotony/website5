@@ -1,0 +1,155 @@
+﻿<style>
+    .form-control {
+        background-color: #939393;
+        color: white;
+    }
+
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    input:-moz-placeholder, textarea:-moz-placeholder {
+        color: white;
+        font-size: large;
+        font-weight: bold;
+    }
+
+  select option:checked,
+select option:hover {
+    box-shadow: 0 0 10px 100px #000 inset;
+}
+
+       button .glyphicon {
+        color: black !important;
+    }
+
+    .btn-success {
+        color: black;
+        background-color: #06FBB5;
+        border-color: #06FBB5;
+        border: none !important;
+        box-shadow: none !important;
+         
+    }
+
+   
+    #btn-signup {
+            background-color :#06FBB5;
+               
+              
+    cursor:pointer;
+}
+     
+        .btn-success:active {
+            color: black;
+            background-color: #06FBB5;
+            border-color: #06FBB5;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .btn-group-lg>.btn, .btn-lg {
+   padding-top:5px;
+   padding-bottom:5px;
+   
+  
+}
+
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+ 
+    border-top: 0px solid #ddd;
+}
+</style>
+
+<div class="container-fluid">
+
+
+
+
+    <br />
+
+    <div align="center" style="font-size:20px;">  Trademark Status </div>
+
+    <br/>
+   
+        <table class="table">
+
+
+
+            <tr>
+
+                <td>
+                    <select class="form-control" id="Getstatus" data-ng-options="c.Transaction_Status as c.Transaction_Status2 for c in varray44" name="status" ng-model="aa.Getstatus">
+                        <option value="">-- Select Search Criteria   --</option>
+                    </select>
+                    <input type="text" id="SelectedValue" class="form-control " required name="txt_status" placeholder="Enter Value" ng-model="aa.SelectedValue">
+
+
+
+                </td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <br />
+                   
+                    <button id="Button3" type="submit" ng-click="Ddx3()" class="btn-success btn-lg">  Clear &nbsp <i class="glyphicon glyphicon-remove"></i> </button>
+
+                    <button id="Button3" type="submit" ng-click="Ddx(aa.Getstatus,aa.SelectedValue)" class="btn-success btn-lg">  Search <i class="glyphicon glyphicon-search"></i> </button>
+
+
+
+
+
+
+
+                </td>
+            </tr>
+
+        </table>
+   
+
+    <table align="center" class="table" ng-show=vshow id="table1">
+     
+       
+
+        <tr>
+            <td colspan="2" style="background-color:#3D3D3D; color:white; text-align:center; font-weight:bold;width:100%">
+                <strong style="font-weight:bold">---STATUS INFORMATION---</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100%" align="justify" colspan="2">
+                Dear
+                {{user.Surname}},
+
+                <br /> We will like to inform you that your application ("/OAI/TM/{{ dd.lt_pw[0].validationID}} is currently at the <strong>  {{dd.ppx.status}}  Office</strong><br />
+                Regards,
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color:#3D3D3D; color:#06FBB5; text-align:center; font-weight:bold;width:100%" colspan="2"></td>
+        </tr>
+        <tr>
+            <td style="width:50%;">
+                <strong>
+                    &nbsp;THE TRADEMARK REGISTRY,<br />
+                    &nbsp;COMMERCIAL LAW DEPARTMENT NIGERIA,<br />
+                    &nbsp;FEDERAL MINISTRY OF TRADE AND INVESTMENT,<br />
+                    &nbsp;FEDERAL CAPITAL TERRITORY,<br />
+                    &nbsp;ABUJA,NIGERIA
+                </strong>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color:#3D3D3D; color:#06FBB5; text-align:center; font-weight:bold;width:100%" colspan="2"></td>
+        </tr>
+    </table>
+
+    </div>
